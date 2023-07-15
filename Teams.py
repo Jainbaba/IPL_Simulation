@@ -46,12 +46,12 @@ class Team:
         self.match_trackers = {}
         with open("teams.json") as fl:
             team_info = json.load(fl)[name]
-        with open("playerInfo.json") as f:
+        with open("player.json") as f:
             player_data = json.load(f)
 
         self.utils = Utils()
-        for player in team_info:
-            player_info = player_data[player]
+        for player_name in team_info:
+            player_info = player_data[player_name]
             player = Player(player_info)
             self.roster.append(player)
             self.match_trackers[player.name] = Tracker(player)

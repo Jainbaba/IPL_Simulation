@@ -142,7 +142,6 @@ class Player:
         self.captaincies = player_data["captained"]
         self.wicketkeeper = player_data["wicketkeeper"]
         self.matches_played = player_data["matches"]
-        self.tracker = Tracker(self.name)
         self.calculate_batting_points()
         self.calculate_bowling_points()
 

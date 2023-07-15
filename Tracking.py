@@ -3,7 +3,7 @@ class Tracker:
     Tracker class to track player stats for a match.
 
     Parameters:
-      - player_name (str): Name of the player
+      - player(str): Player class object of the player
 
     Attributes:
       - name (str): Name of the player
@@ -18,8 +18,8 @@ class Tracker:
       - bowling_log (list): Log of bowling events
     """
 
-    def __init__(self, player_name):
-        self.name = player_name
+    def __init__(self, player):
+        self.name = player.name
         self.runs_scored = 0
         self.runs_conceded = 0
         self.balls_faced = 0

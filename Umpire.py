@@ -1,6 +1,7 @@
 import random
 from Commentator import Commentator
 from Settings import Setting
+from Summary import MatchSummary
 from Teams import Team
 from Players import Player
 from Tracking import Tracker
@@ -63,19 +64,19 @@ class Umpire:
       deliver_ball():
         Delivers a ball for the current over by the specified bowler.
         Updates overs, bowler stats, batter stats, match situation etc.
-        
+
       predict_ball_outcome():
         Predicts run/wicket outcome for a delivery based on probabilities.
 
       update_runs():
         Updates runs scored, batter/bowler stats after a delivery.
-        
+
       is_death_bowler():
         Checks if a bowler is a designated death bowler.
-        
+
       select_powerplay_bowler():
         Selects powerplay bowler based on current match stats.
-        
+
       select_middle_overs_bowler():
         Selects bowler for middle overs based on current match stats.
         Checks if current bowler stats indicate they should be replaced.
@@ -87,7 +88,7 @@ class Umpire:
         Checks if current death bowler should be replaced.
         Prioritizes bowlers who haven't bowled yet.
         Favors bowlers with better economy rates.
-        
+
       play_innings():
         Simulates an innings by delivering balls over-by-over.
         Selects opening, middle overs, and death overs bowlers based on stats.
@@ -182,7 +183,7 @@ class Umpire:
             self.current_bowler,
         )
 
-    def wicketType(self, dismissal_type):  # sourcery skip: extract-method
+    def wicketType(self, dismissal_type):
         if dismissal_type == "runOut":
             run_out_runs = random.randint(0, 2)
             self.runs_scored += run_out_runs
@@ -220,7 +221,7 @@ class Umpire:
                 self.get_tracker(self.batting_team, self.striker),
                 0,
                 1,
-                f"W(CaughtBy {feilder.name}):{self.current_bowler.name}:{self.balls_bowled}:0",
+                f"W(Caught By {feilder.name}):{self.current_bowler.name}:{self.balls_bowled}:0",
             )
             self.utils.update_bowler_tracker(
                 self.get_tracker(self.bowling_team, self.current_bowler),
@@ -308,17 +309,8 @@ class Umpire:
         self.dismissal_probabilities["runOut"] = self.striker.run_out_probability
 
     def deliver_ball(self, over, bowler):
-        self.previous_bowler = self.current_bowler
+        # self.previous_bowler = self.current_bowler
         self.current_bowler = bowler
-        if over == 0:
-            self.commentator.opening_batsmen_message(
-                self.batting_team,
-                self.bowling_team,
-                self.striker,
-                self.non_striker,
-                self.current_bowler,
-                self.target,
-            )
         self.settings.adjust_bowler_settings(
             self.current_bowler, self.spin_factor, self.pace_factor
         )
@@ -715,7 +707,9 @@ class Umpire:
         )
 
         for i in range(20):
-            if self.wickets_fallen >= 10:
+            if self.wickets_fallen >= 10 or (
+                self.target is not None and self.target <= self.runs_scored
+            ):
                 break
             if i != 0:
                 self.change_strike()
@@ -727,13 +721,35 @@ class Umpire:
                     self.previous_bowler,
                     self.current_bowler,
                 )
+            
             if i < 2:
-                self.deliver_ball(
+                if i % 2 == 0:
+                     if i == 0:
+                        self.commentator.opening_batsmen_message(
+                            self.batting_team,
+                            self.bowling_team,
+                            self.striker,
+                            self.non_striker,
+                            self.opening_bowlers[0],
+                            self.target,
+                        )
+                     self.deliver_ball(
                     i, self.opening_bowlers[0]
-                ) if i % 2 == 0 else self.deliver_ball(i, self.opening_bowlers[1])
+                )
+                else:
+                    if i == 0:
+                        self.commentator.opening_batsmen_message(
+                            self.batting_team,
+                            self.bowling_team,
+                            self.striker,
+                            self.non_striker,
+                            self.opening_bowlers[1],
+                            self.target,
+                        ) 
+                    self.deliver_ball(i, self.opening_bowlers[1])
                 self.previous_bowler = (
                     self.opening_bowlers[0] if i % 2 != 1 else self.opening_bowlers[1]
-                )
+                )     
             if i < 6:
                 self.deliver_ball(
                     i, self.select_powerplay_bowler(i, self.current_bowler)
@@ -764,4 +780,9 @@ class Umpire:
                         self.previous_bowler, self.death_bowlers
                     ),
                 )
+        summary = MatchSummary()
+        summary.get_summary(
+            self.batting_team.match_trackers.values(),
+            self.bowling_team.match_trackers.values(),
+        )
         return self.runs_scored if self.target is None else self.match_result()

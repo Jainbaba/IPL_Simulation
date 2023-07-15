@@ -298,7 +298,6 @@ class Commentator:
         self.generate_reply(commentary)
 
     def generate_reply(self, messages):
-        logging.info(f"**Commentator**:\n{messages}")
         print(f"**Commentator**:\n{messages}")
         print(
             "--------------------------------------------------------------------------"
