@@ -1,6 +1,0 @@
-{
-    "python.linting.pycodestyleEnabled": true,
-    "python.linting.enabled": true,
-    "pythom.linting.pylintEnabled": false,
-    "git.ignoreLimitWarning": true,
-}
