@@ -3,8 +3,6 @@ import random
 from Players import Player
 from Tracking import Tracker
 from Utils import Utils
-
-
 class Team:
     """
     Team class to represent a cricket team.

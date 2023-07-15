@@ -1,6 +1,4 @@
-from ast import List
 from tabulate import tabulate
-
 from Tracking import Tracker
 
 class MatchSummary:

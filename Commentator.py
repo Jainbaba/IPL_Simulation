@@ -1,4 +1,3 @@
-import logging
 from Players import Player
 from Teams import Team
 
