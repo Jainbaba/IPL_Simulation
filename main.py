@@ -1,60 +1,146 @@
-import json
 import logging
 import random
-import time
-from Feild import feild
-logging.basicConfig(filename='app.log', filemode='w', format='%(levelname)s - %(message)s',level=logging.INFO)
+from Feild import Feild
+
 from Teams import Team
 from Umpire import Umpire
 from Commentator import Commentator
-with open('teams.json') as fl:
-    dataFile = json.load(fl)
-    
-def doToss(secondInnDew, pitchDetoriate, typeOfPitch,teamA,teamB,commentator):
+
+
+logging.basicConfig(filename="app.log", filemode="w", level=logging.INFO)
+
+
+class Match:
+    """
+    Match class to simulate an IPL cricket match.
+
+    Parameters:
+    - None
+
+    Attributes:
+    - fields: Feild object to handle field conditions
+    - team_a: First Team object selected by user
+    - team_b: Second Team object selected by user
+    - dew: Boolean indicating if dew is present
+    - pitch_deterioration: Boolean indicating pitch deterioration
+    - pitch_type: String indicating pitch type - "dead", "green", "dusty"
+    - commentator: Commentator object to generate match commentary
+    - batting_team: Team object for team batting first
+    - bowling_team: Team object for team bowling first
+    - pace_factor: Float pace bowling pitch factor
+    - spin_factor: Float spin bowling pitch factor
+    - first_innings: Umpire object to conduct first innings
+    - target: Integer target score for second innings
+    - second_innings: Umpire object to conduct second innings
+
+    Methods:
+
+    intro():
+      - Prints match intro and prompts user to select 2 teams
+      - Returns selected Team objects as team_a and team_b
+
+    conduct_toss():
+      - Simulates coin toss using randomness
+      - Determines team decision to bat or bowl first
+      - Returns batting_team, bowling_team order based on toss
+      - Uses commentator to print toss result
+    """
+
+    def __init__(self):
+        fields = Feild()
+        team_a, team_b = self.intro()
+        dew, pitch_deterioration, pitch_type = fields.get_field_status()
+        commentator = Commentator(team_a, team_b)
+        batting_team, bowling_team = self.conduct_toss(
+            dew, pitch_deterioration, pitch_type, team_a, team_b, commentator
+        )
+        pace_factor, spin_factor = fields.pitch_info(pitch_type)
+        first_innings = Umpire(
+            spin_factor, pace_factor, batting_team, bowling_team, commentator
+        )
+        target = first_innings.play_innings() + 1
+        second_innings = Umpire(
+            spin_factor, pace_factor, bowling_team, batting_team, commentator, target
+        )
+        second_innings.play_innings()
+
+    def intro(self):
+        teams = [
+            "Chennai Super Kings",
+            "Delhi Capitals",
+            "Kolkata Knight Riders",
+            "Mumbai Indians",
+            "Punjab Kings",
+            "Royal Challengers Bangalore",
+            "Rajasthan Royals",
+            "Sunrisers Hyderabad",
+        ]
+
+        print("Welcome to the IPL simulation!")
+        print("Please select two teams to compete from the following list:")
+        print()
+
+        for i, team in enumerate(teams, 1):
+            print(f"{i}. {team}")
+
+        while True:
+            team1_choice = input("Enter the number for the first team: ")
+            team2_choice = input("Enter the number for the second team: ")
+
+            if (
+                team1_choice.isdigit()
+                and team2_choice.isdigit()
+                and 1 <= int(team1_choice) <= len(teams)
+                and 1 <= int(team2_choice) <= len(teams)
+                and team1_choice != team2_choice
+            ):
+                team1_choice = int(team1_choice)
+                team2_choice = int(team2_choice)
+                break
+
+            print("Invalid input. Please try again.")
+
+        team1 = Team(teams[team1_choice - 1])
+        team2 = Team(teams[team2_choice - 1])
+
+        print()
+        print(
+            f"Great! The {team1} will be competing against the {team2} in this simulation."
+        )
+        return team1, team2
+
+    def conduct_toss(
+        self,
+        pitchDetoriate,
+        typeOfPitch,
+        teamA: Team,
+        teamB: Team,
+        commentator: Commentator,
+    ):
         battingLikely = 0.45
-        if secondInnDew:
+        battingLikely = 0.45
+        if self:
             battingLikely -= random.uniform(0.09, 0.2)
         if pitchDetoriate:
             battingLikely += random.uniform(0.09, 0.2)
         if typeOfPitch == "dead":
             battingLikely -= random.uniform(0.05, 0.15)
-        if typeOfPitch == "green":
+        elif typeOfPitch == "green":
             battingLikely += random.uniform(0.05, 0.15)
-        if typeOfPitch == "dusty":
+        elif typeOfPitch == "dusty":
             battingLikely += random.uniform(0.04, 0.1)
 
         toss = random.randint(0, 1)
         outcome = random.uniform(0, 1)
         if toss == 0:
             if outcome > battingLikely:
-                commentator.tossMessage(teamA, "BAT FIRST")
-                return [teamA,teamB]
-            commentator.tossMessage(teamA, "BOWL FIRST")
-            return [teamB,teamA]
+                commentator.toss_message(teamA, "Bat")
+                return [teamA, teamB]
+            commentator.toss_message(teamA, "Bowl")
+            return [teamB, teamA]
         if outcome > battingLikely:
-            commentator.tossMessage(teamB, "BAT FIRST")
-            return [teamB,teamA]
+            commentator.toss_message(teamB, "Bat")
+            return [teamB, teamA]
         else:
-            commentator.tossMessage(teamB, "BOWL FIRST")
-            return [teamA,teamB]
-            
-teamA = Team("csk",dataFile["csk"])
-teamB = Team("dc",dataFile["dc"])
-fields = feild()
-secondInnDew = False
-dew = False
-pitchDetoriate = True
-detoriate = False
-paceFactor = None
-spinFactor = None
-outfield = None
-typeOfPitch = "dusty"
-paceFactor, spinFactor, outfield = fields.pitchInfo(typeOfPitch)
-commentator = Commentator(teamA,teamB,typeOfPitch)
-battingTeam,bowlingTeam = doToss(secondInnDew,pitchDetoriate,typeOfPitch,teamA,teamB,commentator)
-matchUmpire = Umpire(spinFactor,paceFactor,battingTeam,bowlingTeam,commentator)
-
-
-
-
-
+            commentator.toss_message(teamB, "Bowl")
+            return [teamA, teamB]

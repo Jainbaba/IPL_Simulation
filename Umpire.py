@@ -1,754 +1,767 @@
-import logging
 import random
-
+from Commentator import Commentator
+from Settings import Setting
+from Teams import Team
+from Players import Player
+from Tracking import Tracker
 from Utils import Utils
 
 
 class Umpire:
-    def __init__(self, spinFactor, paceFactor, battingTeam, bowlingTeam, commentator):
-        logging.basicConfig(
-            filename="app.log",
-            filemode="w",
-            format="%(levelname)s - %(message)s",
-            level=logging.INFO,
-        )
-        self.BattingOrder = battingTeam.battingOrder()
-        self.bowlingOrder = bowlingTeam.bowlingOrder()
-        self.battingTeam = battingTeam
-        self.bowlingTeam = bowlingTeam
-        self.spinFactor = spinFactor
-        self.paceFactor = paceFactor
-        self.wickets = 0
-        self.score = 0
-        self.balls = 0
-        self.overs = ""
-        self.runRate = 0
-        self.onStrike = self.BattingOrder[0]
-        self.offStrike = self.BattingOrder[1]
-        self.CurrentBowler = None
-        self.PreviousBowler = None
-        self.commentator = commentator
-        self.utils = Utils()
-        self.overTracker()
+    """
+    Umpire class to conduct match innings.
 
-    def MatchSettings(self):
-        # sourcery skip: merge-else-if-into-elif, min-max-identity
-        if self.balls < 12:
-            sixAdjustment = random.uniform(0.02, 0.05)
-            self.outAvg = 0 if (self.outAvg < 0.07) else self.outAvg - 0.07
-            sixAdjustment = (
-                self.onStrike.batRunDenominations["6"]
-                if sixAdjustment > self.onStrike.batRunDenominations["6"]
-                else sixAdjustment
-            )
-            self.onStrike.batRunDenominations["6"] -= sixAdjustment
-            self.onStrike.batRunDenominations["0"] += sixAdjustment * (1 / 3)
-            self.onStrike.batRunDenominations["1"] += sixAdjustment * (2 / 3)
-        elif 12 <= self.balls < 36:
-            if self.wickets == 0:
-                defenseAndOneAdjustment = random.uniform(0.05, 0.11)
-                self.onStrike.batRunDenominations["0"] -= defenseAndOneAdjustment * (
-                    2 / 3
-                )
-                self.onStrike.batRunDenominations["1"] -= defenseAndOneAdjustment * (
-                    1 / 3
-                )
-                self.onStrike.batRunDenominations["4"] += defenseAndOneAdjustment * (
-                    2 / 3
-                )
-                self.onStrike.batRunDenominations["6"] += defenseAndOneAdjustment * (
-                    1 / 3
-                )
-            else:
-                defenseAndOneAdjustment = random.uniform(0.02, 0.08)
-                self.onStrike.batRunDenominations["0"] -= defenseAndOneAdjustment * (
-                    2 / 3
-                )
-                self.onStrike.batRunDenominations["1"] -= defenseAndOneAdjustment * (
-                    1 / 3
-                )
-                self.onStrike.batRunDenominations["4"] += defenseAndOneAdjustment * (
-                    2.5 / 3
-                )
-                self.onStrike.batRunDenominations["6"] += defenseAndOneAdjustment * (
-                    0.5 / 3
-                )
-                self.outAvg -= 0.03
-        elif 36 <= self.balls < 102:
-            if self.wickets < 3:
-                defenseAndOneAdjustment = random.uniform(0.05, 0.11)
-                self.onStrike.batRunDenominations["0"] -= defenseAndOneAdjustment * (
-                    1.5 / 3
-                )
-                self.onStrike.batRunDenominations["1"] -= defenseAndOneAdjustment * (
-                    1 / 3
-                )
-                self.onStrike.batRunDenominations["4"] += defenseAndOneAdjustment * (
-                    1.5 / 3
-                )
-                self.onStrike.batRunDenominations["6"] += defenseAndOneAdjustment * (
-                    1 / 3
-                )
-            else:
-                defenseAndOneAdjustment = random.uniform(0.02, 0.07)
-                self.onStrike.batRunDenominations["0"] -= defenseAndOneAdjustment * (
-                    1.6 / 3
-                )
-                self.onStrike.batRunDenominations["1"] -= defenseAndOneAdjustment * (
-                    1.2 / 3
-                )
-                self.onStrike.batRunDenominations["4"] += defenseAndOneAdjustment * (
-                    2.1 / 3
-                )
-                self.onStrike.batRunDenominations["6"] += defenseAndOneAdjustment * (
-                    0.9 / 3
-                )
-                self.outAvg -= 0.03
-        else:
-            if self.wickets < 7:
-                defenseAndOneAdjustment = random.uniform(0.07, 0.1)
-                self.onStrike.batRunDenominations["0"] -= defenseAndOneAdjustment * (
-                    0.4 / 3
-                )
-                self.onStrike.batRunDenominations["1"] -= defenseAndOneAdjustment * (
-                    1 / 3
-                )
-                self.onStrike.batRunDenominations["4"] += defenseAndOneAdjustment * (
-                    1.4 / 3
-                )
-                self.onStrike.batRunDenominations["6"] += defenseAndOneAdjustment * (
-                    1.8 / 3
-                )
-            else:
-                defenseAndOneAdjustment = random.uniform(0.07, 0.09)
-                self.onStrike.batRunDenominations["0"] -= defenseAndOneAdjustment * (
-                    0.4 / 3
-                )
-                self.onStrike.batRunDenominations["1"] -= defenseAndOneAdjustment * (
-                    1.8 / 3
-                )
-                self.onStrike.batRunDenominations["4"] += defenseAndOneAdjustment * (
-                    1.5 / 3
-                )
-                self.onStrike.batRunDenominations["6"] += defenseAndOneAdjustment * (
-                    1.5 / 3
-                )
-            self.outAvg += 0.01
+    Parameters:
+      - spin_factor (float): Spin pitch factor
+      - pace_factor (float): Pace pitch factor
+      - batting_team (Team): Batting team
+      - bowling_team (Team): Bowling team
+      - commentator (Commentator): Commentator object
+      - target (int, optional): Target score for 2nd innings
 
-    def FirstInningsProbabilitySettings(self):  # sourcery skip: low-code-quality
-        batter = self.battingTeam.MatchTracker.get(self.onStrike.displayName)
-        outsLast10 = self.wickets
+    Attributes:
 
-        # Tweeting the Probabilities of Boundaries if Wickets are available in last 15 balls
-        if self.balls < 105:
-            adjust_last10 = random.uniform(0.02, 0.04)
-            if outsLast10 < 2:
-                self.onStrike.batRunDenominations["0"] -= adjust_last10 * (1 / 2)
-                self.onStrike.batRunDenominations["1"] -= adjust_last10 * (1 / 2)
-                self.onStrike.batRunDenominations["2"] += adjust_last10 * (1 / 2)
-                self.onStrike.batRunDenominations["4"] += adjust_last10 * (1 / 2)
-            else:
-                adjust_last10 += 0.018
-                self.onStrike.batRunDenominations["0"] += adjust_last10 * (1.1 / 2)
-                self.onStrike.batRunDenominations["1"] += adjust_last10 * (0.9 / 2)
-                self.onStrike.batRunDenominations["4"] -= adjust_last10 * (1 / 2)
-                self.onStrike.batRunDenominations["6"] -= adjust_last10 * (1 / 2)
-                self.outAvg -= 0.02
+      - batting_order (list): Batting team batting order
+      - bowling_order (list): Bowling team bowling order
+      - batting_team (Team): Batting team
+      - bowling_team (Team): Bowling team
+      - spin_factor (float): Spin pitch factor
+      - pace_factor (float): Pace pitch factor
+      - target (int): Target score
+      - wickets_fallen (int): Wickets fallen
+      - runs_scored (int): Runs scored
+      - balls_bowled (int): Balls bowled
+      - overs (str): Current over
+      - striker (Player): Striker batter
+      - non_striker (Player): Non-striker batter
+      - current_bowler (Player): Current bowler
+      - previous_bowler (Player): Previous bowler
+      - commentator (Commentator): Commentator object
+      - utils (Utils): Utils object
+      - settings (Settings): Settings object
 
-        # Opening Batsmen Settings
-        if batter.ballsFaced < 8 and self.balls < 80:
-            adjust = random.uniform(-0.01, 0.03)
-            self.outAvg -= 0.015
-            self.onStrike.batRunDenominations["0"] += adjust * (1.5 / 3)
-            self.onStrike.batRunDenominations["1"] += adjust * (1 / 3)
-            self.onStrike.batRunDenominations["2"] += adjust * (0.5 / 3)
-            self.onStrike.batRunDenominations["4"] -= adjust * (0.5 / 3)
-            self.onStrike.batRunDenominations["6"] -= adjust * (1.5 / 3)
+    Methods:
 
-        # Batsmen Played between 15-30 Balls
-        if batter.ballsFaced > 15 and batter.ballsFaced < 30:
-            adjust = random.uniform(0.03, 0.07)
-            self.onStrike.batRunDenominations["0"] -= adjust * (1 / 3)
-            self.onStrike.batRunDenominations["4"] += adjust * (1 / 3)
+      __init__():
+        Initializes Umpire object
 
-        if batter.ballsFaced > 20 and (batter.runsScored / batter.ballsFaced) < 110:
-            adjust = random.uniform(0.05, 0.08)
-            self.onStrike.batRunDenominations["0"] += adjust * (1.5 / 3)
-            self.onStrike.batRunDenominations["1"] += adjust * (0.5 / 3)
-            self.onStrike.batRunDenominations["6"] += adjust * (2 / 3)
-            self.outAvg += 0.05
+      change_strike():
+        Swaps striker and non-striker batters
 
-        if batter.ballsFaced > 40 and (batter.runsScored / batter.ballsFaced) < 120:
-            adjust = random.uniform(0.06, 0.09)
-            self.onStrike.batRunDenominations["0"] += adjust * (1.2 / 3)
-            self.onStrike.batRunDenominations["1"] += adjust * (0.7 / 3)
-            self.onStrike.batRunDenominations["6"] += adjust * (1.8 / 3)
-            self.outAvg += 0.04
+      match_result():
+        Prints match result summary
 
-        if (
-            batter.ballsFaced > 30
-            and (batter.runsScored / batter.ballsFaced) > 145
-            and (self.wickets < 5)
-            or self.balls > 102
-        ):
-            adjust = random.uniform(0.06, 0.09)
-            self.onStrike.batRunDenominations["0"] -= adjust * (1 / 3)
-            self.onStrike.batRunDenominations["1"] -= adjust * (1.5 / 3)
-            self.onStrike.batRunDenominations["4"] += adjust * (1.6 / 3)
-            self.onStrike.batRunDenominations["6"] += adjust * (1.9 / 3)
+      dismiss_batsman():
+        Dismisses batsman and brings in new batsman
 
-        if self.balls > 105 and (self.score / self.balls) < 1.17:
-            adjust = random.uniform(0.06, 0.09)
-            self.onStrike.batRunDenominations["0"] += adjust * (1.2 / 3)
-            self.onStrike.batRunDenominations["1"] -= adjust * (1.6 / 3)
-            self.onStrike.batRunDenominations["4"] += adjust * (1.4 / 3)
-            self.onStrike.batRunDenominations["6"] += adjust * (2.1 / 3)
-            self.outAvg += 0.03
+      wicketType():
+        Handles wicket based on dismissal type
 
-        elif self.balls > 60 and (self.score / self.balls) < 1.1:
-            adjust = random.uniform(0.06, 0.09)
-            self.onStrike.batRunDenominations["0"] -= adjust * (1.2 / 3)
-            self.onStrike.batRunDenominations["1"] -= adjust * (0.8 / 3)
-            self.onStrike.batRunDenominations["4"] += adjust * (1 / 3)
-            self.onStrike.batRunDenominations["6"] += adjust * (1 / 3)
-            self.outAvg += 0.02
+      calculate_batter_bowler_probabilities():
+        Calculates batting/bowling probabilities
 
-    def UpdateBatterTracker(self, player, runsScored, ballsFaced, battingLog):
-        batter = self.battingTeam.MatchTracker.get(player.displayName)
-        batter.runsScored += runsScored
-        batter.ballsFaced += ballsFaced
-        batter.battingLog.append(battingLog)
+      deliver_ball():
+        Delivers a ball for the current over by the specified bowler.
+        Updates overs, bowler stats, batter stats, match situation etc.
+        
+      predict_ball_outcome():
+        Predicts run/wicket outcome for a delivery based on probabilities.
 
-    def UpdateBowlerTracker(
+      update_runs():
+        Updates runs scored, batter/bowler stats after a delivery.
+        
+      is_death_bowler():
+        Checks if a bowler is a designated death bowler.
+        
+      select_powerplay_bowler():
+        Selects powerplay bowler based on current match stats.
+        
+      select_middle_overs_bowler():
+        Selects bowler for middle overs based on current match stats.
+        Checks if current bowler stats indicate they should be replaced.
+        Prioritizes bowlers who haven't bowled yet.
+        Favors bowlers with better economy rates.
+
+      select_death_overs_bowler():
+        Selects bowler for death overs based on current match stats.
+        Checks if current death bowler should be replaced.
+        Prioritizes bowlers who haven't bowled yet.
+        Favors bowlers with better economy rates.
+        
+      play_innings():
+        Simulates an innings by delivering balls over-by-over.
+        Selects opening, middle overs, and death overs bowlers based on stats.
+        Alternates deliveries between previous and current bowler.
+        Selects new bowlers when needed based on overs.
+        Updates match situation after each ball - runs, wickets, etc.
+    """
+
+    def __init__(
         self,
-        player,
-        runsGiven,
-        ballsDelivered,
-        oversCompleted,
-        wicketsTaken,
-        catches,
-        bowlingLog,
+        spin_factor,
+        pace_factor,
+        batting_team: Team,
+        bowling_team: Team,
+        commentator: Team,
+        target=None,
     ):
-        bowler = self.bowlingTeam.MatchTracker.get(player.displayName)
-        bowler.runsGiven += runsGiven
-        bowler.ballsDelivered += ballsDelivered
-        bowler.oversCompleted += 1 if oversCompleted else 0
-        bowler.wicketsTaken += 1 if wicketsTaken else 0
-        bowler.catches += 1 if catches else 0
-        bowler.bowlingLog.append(bowlingLog)
+        self.batting_order: list(Player) = batting_team.batting_order()
+        self.bowling_order: list(Player) = bowling_team.bowling_order()
+        self.batting_team = batting_team
+        self.bowling_team = bowling_team
+        self.spin_factor = spin_factor
+        self.pace_factor = pace_factor
+        self.target = target
+        self.wickets_fallen = 0
+        self.runs_scored = 0
+        self.balls_bowled = 0
+        self.overs = ""
+        self.striker: Player = self.batting_order[0]
+        self.non_striker: Player = self.batting_order[1]
+        self.current_bowler: Player = None
+        self.previous_bowler: Player = None
+        self.commentator: Commentator = commentator
+        self.utils = Utils()
+        self.settings = Setting()
 
-    def changeStrike(self):
-        self.onStrike, self.offStrike = self.offStrike, self.onStrike
+    def get_tracker(self, team: Team, player: Player):
+        return team.match_trackers.get(player.name)
 
-    def playerDismissed(self, player):
-        if self.wickets == 10:
-            print("ALL OUT")
-            return "All Out"
-        else:
-            if self.onStrike == player:
-                self.onStrike = self.BattingOrder[self.wickets + 1]
-            else:
-                self.offStrike = self.BattingOrder[self.wickets + 1]
+    def change_strike(self):
+        self.striker, self.non_striker = self.non_striker, self.striker
 
-    def wicketType(self, out_type):  # sourcery skip: extract-method
-        if out_type == "runOut":
-            runOutRuns = random.randint(0, 2)
-            self.score += runOutRuns
-            self.UpdateBatterTracker(
-                self.onStrike,
-                runOutRuns,
-                1,
-                f"W(Run out):{self.CurrentBowler.displayName}:{self.balls}:{runOutRuns}",
+    def match_result(self):
+        if self.runs_scored == (self.target - 1) and (
+            self.balls_bowled == 120 or self.wickets_fallen == 10
+        ):
+            self.commentator.tie_message(
+                f"{self.runs_scored}/{self.wickets_fallen}",
+                self.batting_team,
+                self.bowling_team,
+                self.overs,
             )
-            self.UpdateBowlerTracker(
-                self.CurrentBowler,
-                runOutRuns,
+        elif self.runs_scored >= self.target:
+            self.commentator.winner_message(
+                f"{self.runs_scored}/{self.wickets_fallen}",
+                self.batting_team,
+                self.bowling_team,
+                self.overs,
+                True,
+                10 - self.wickets_fallen,
+            )
+        elif self.balls_bowled == 120 or self.wickets_fallen == 10:
+            self.commentator.winner_message(
+                f"{self.runs_scored}/{self.wickets_fallen}",
+                self.batting_team,
+                self.bowling_team,
+                self.overs,
+                False,
+                (self.target - 1) - self.runs_scored,
+            )
+        return
+
+    def find_batsman(self, players_tracker: Tracker):
+        for player in players_tracker:
+            if player.balls_faced == 0:
+                for batsman in self.batting_team:
+                    if batsman.name == player.name:
+                        return batsman
+
+    def dismiss_batsman(self, player):
+        if self.wickets_fallen < 10:
+            if self.striker == player:
+                self.striker = self.batting_order[self.wickets_fallen + 1]
+            else:
+                self.non_striker = self.batting_order[self.wickets_fallen + 1]
+        self.commentator.new_batsman_message(
+            f"{self.runs_scored}/{self.wickets_fallen}",
+            self.batting_team,
+            self.bowling_team,
+            self.overs,
+            self.striker,
+            self.current_bowler,
+        )
+
+    def wicketType(self, dismissal_type):  # sourcery skip: extract-method
+        if dismissal_type == "runOut":
+            run_out_runs = random.randint(0, 2)
+            self.runs_scored += run_out_runs
+            self.utils.update_batter_tracker(
+                self.get_tracker(self.batting_team, self.striker),
+                run_out_runs,
+                1,
+                f"W(Run out):{self.current_bowler.name}:{self.balls_bowled}:{run_out_runs}",
+            )
+            self.utils.update_bowler_tracker(
+                self.get_tracker(self.bowling_team, self.current_bowler),
+                run_out_runs,
                 1,
                 False,
                 True,
                 False,
-                f"{self.balls}:W(Run out):{runOutRuns}",
+                f"{self.balls_bowled}:W(Run out):{run_out_runs}",
             )
-            self.commentator.WicketMessage(
-                f"{self.score}/{self.wickets}",
-                self.battingTeam,
-                self.bowlingTeam,
-                self.onStrike,
-                self.CurrentBowler,
+            self.commentator.wicket_message(
+                f"{self.runs_scored}/{self.wickets_fallen}",
+                self.batting_team,
+                self.bowling_team,
+                self.striker,
+                self.current_bowler,
                 None,
                 "Run out",
-                runOutRuns,
-                self.balls,
+                run_out_runs,
+                self.overs,
             )
-            self.playerDismissed(self.onStrike)
+            self.dismiss_batsman(self.striker)
             return
-        elif out_type == "caught":
-            feilder = self.bowlingTeam.catcherProbilities()
-            self.UpdateBatterTracker(
-                self.onStrike,
+        elif dismissal_type == "caught":
+            feilder: Player = self.bowling_team.determine_catcher()
+            self.utils.update_batter_tracker(
+                self.get_tracker(self.batting_team, self.striker),
                 0,
                 1,
-                f"W(CaughtBy {feilder.displayName}):{self.CurrentBowler.displayName}:{self.balls}:0",
+                f"W(CaughtBy {feilder.name}):{self.current_bowler.name}:{self.balls_bowled}:0",
             )
-            self.UpdateBowlerTracker(
-                self.CurrentBowler,
+            self.utils.update_bowler_tracker(
+                self.get_tracker(self.bowling_team, self.current_bowler),
                 0,
                 1,
                 False,
                 True,
                 False,
-                f"{self.balls}:W(CaughtBy {feilder.displayName})",
+                f"{self.balls_bowled}:W(CaughtBy {feilder.name})",
             )
-            self.UpdateBowlerTracker(
-                feilder,
+            self.utils.update_bowler_tracker(
+                self.get_tracker(self.bowling_team, feilder),
                 0,
                 0,
                 False,
                 False,
                 True,
-                f"{self.balls}:Catch({self.onStrike})",
+                f"{self.balls_bowled}:Catch({self.striker})",
             )
-            self.commentator.WicketMessage(
-                f"{self.score}/{self.wickets}",
-                self.battingTeam,
-                self.bowlingTeam,
-                self.onStrike,
-                self.CurrentBowler,
+            self.commentator.wicket_message(
+                f"{self.runs_scored}/{self.wickets_fallen}",
+                self.batting_team,
+                self.bowling_team,
+                self.striker,
+                self.current_bowler,
                 feilder,
                 "Caught",
                 0,
-                self.balls,
+                self.overs,
             )
-            self.playerDismissed(self.onStrike)
+            self.dismiss_batsman(self.striker)
             return
-        elif out_type in ["bowled", "lbw", "hitwicket", "stumped"]:
-            self.UpdateBatterTracker(
-                self.onStrike,
+        elif dismissal_type in ["bowled", "lbw", "hitwicket", "stumped"]:
+            self.utils.update_batter_tracker(
+                self.get_tracker(self.batting_team, self.striker),
                 0,
                 1,
-                f"W({out_type}):{self.CurrentBowler.displayName}:{self.balls}:0",
+                f"W({dismissal_type}):{self.current_bowler.name}:{self.balls_bowled}:0",
             )
-            self.UpdateBowlerTracker(
-                self.CurrentBowler,
+            self.utils.update_bowler_tracker(
+                self.get_tracker(self.bowling_team, self.current_bowler),
                 0,
                 1,
                 False,
                 True,
                 False,
-                f"{self.balls}:W({out_type})",
+                f"{self.balls_bowled}:W({dismissal_type})",
             )
-            self.commentator.WicketMessage(
-                f"{self.score}/{self.wickets}",
-                self.battingTeam,
-                self.bowlingTeam,
-                self.onStrike,
-                self.CurrentBowler,
+            self.commentator.wicket_message(
+                f"{self.runs_scored}/{self.wickets_fallen}",
+                self.batting_team,
+                self.bowling_team,
+                self.striker,
+                self.current_bowler,
                 None,
-                out_type,
+                dismissal_type,
                 0,
-                self.balls,
+                self.overs,
             )
-            self.playerDismissed(self.onStrike)
+            self.dismiss_batsman(self.striker)
             return
 
-    def calculateFieldEffectsOnBowler(self, bowler):
-        # sourcery skip: remove-redundant-if
-        if "break" or "spin" in bowler.bowlStyle:
-            effect = (1.0 - self.spinFactor) / 2
-            bowler.bowlOutRates += effect * 0.25
-            bowler.bowlrunProbilities["0"] += effect * 0.25
-            bowler.bowlrunProbilities["1"] += effect * 0.25
-            bowler.bowlrunProbilities["4"] -= effect * 0.38
-            bowler.bowlrunProbilities["6"] -= effect * 0.3
-        elif "medium" or "fast" in bowler["bowlStyle"]:
-            effect = (1.0 - self.paceFactor) / 2
-            bowler.bowlOutRates += effect * 0.22
-            bowler.bowlrunProbilities["0"] += effect * 0.18
-            bowler.bowlrunProbilities["1"] += effect * 0.22
-            bowler.bowlrunProbilities["4"] -= effect * 0.4
-            bowler.bowlrunProbilities["6"] -= effect * 0.3
-
-    def calculateHeadToHeadPoints(self, bowler, batsmen):
-        self.outAvg = (batsmen.BatoutRates + bowler.bowlOutRates) / 2
-        logging.info(
-            f"bastmen: {batsmen.displayName} | bowler: {bowler.displayName} | {self.outAvg}"
-        )
-        self.deliveryRunAvg = {
+    def calculate_batter_bowler_probabilities(self):
+        self.out_probability = (
+            self.striker.bat_out_rate + self.current_bowler.bowl_out_rate
+        ) / 2
+        self.run_probabilities = {
             str(run): (
-                batsmen.BatrunProbilities[str(run)]
-                + bowler.bowlrunProbilities[str(run)]
+                (
+                    self.striker.bat_run_probabilities[str(run)]
+                    + self.current_bowler.bowl_run_probabilities[str(run)]
+                )
+                / 2
             )
             for run in range(7)
         }
-        self.outTypeAvg = {
-            _: (batsmen.BatoutProbilities[_] + bowler.bowloutProbilities[_]) / 2
+        self.dismissal_probabilities = {
+            _: (
+                self.striker.bat_out_probabilities[_]
+                + self.current_bowler.bowl_out_probabilities[_]
+            )
+            / 2
             for _ in ["caught", "bowled", "lbw", "hitwicket", "stumped"]
         }
-        self.outTypeAvg["runOut"] = batsmen.runOutProbilities
+        self.dismissal_probabilities["runOut"] = self.striker.run_out_probability
 
-    def ballDelivery(self, over, bowler):
-        self.PreviousBowler = self.CurrentBowler
-        self.CurrentBowler = bowler
-        self.calculateFieldEffectsOnBowler(self.CurrentBowler)
-        eachBallInOver = 0
-        while self.balls < (over + 1) * 6 and self.wickets != 10:
-            eachBallInOver += 1
-            self.overs = f"{over}.{eachBallInOver}"
-            print(self.overs)
-            self.calculateHeadToHeadPoints(self.CurrentBowler, self.onStrike)
-            self.FirstInningsProbabilitySettings()
-            self.MatchSettings()
-            self.ballPrediction(self.onStrike.BatrunProbilities)
-
-    def ballPrediction(
-        self, den
-    ):  # sourcery skip: low-code-quality, remove-redundant-if
-        if self.CurrentBowler.bowlWideRate > random.uniform(0, 1):
-            self.score += 1
-            self.UpdateBowlerTracker(
-                self.CurrentBowler, 1, 0, False, False, False, f"{self.balls}:Wide"
+    def deliver_ball(self, over, bowler):
+        self.previous_bowler = self.current_bowler
+        self.current_bowler = bowler
+        if over == 0:
+            self.commentator.opening_batsmen_message(
+                self.batting_team,
+                self.bowling_team,
+                self.striker,
+                self.non_striker,
+                self.current_bowler,
+                self.target,
             )
-            self.commentator.WideMessage(
-                f"{self.score}/{self.wickets}",
-                self.battingTeam,
-                self.bowlingTeam,
-                self.onStrike,
-                self.CurrentBowler,
-                self.balls,
+        self.settings.adjust_bowler_settings(
+            self.current_bowler, self.spin_factor, self.pace_factor
+        )
+        balls_in_over = 0
+        if self.target is not None:
+            while self.balls_bowled < (over + 1) * 6 and (
+                self.wickets_fallen < 10 or self.runs_scored < self.target
+            ):
+                balls_in_over += 1
+                self.overs = f"{over}.{balls_in_over}"
+                self.settings.adjust_batsman_settings(
+                    self.batting_team.match_trackers.get(self.striker.name),
+                    self.striker,
+                    self.wickets_fallen,
+                    self.balls_bowled,
+                    self.runs_scored,
+                    self.striker.bat_out_rate,
+                )
+                self.settings.second_innings_settings(
+                    self.striker,
+                    self.balls_bowled,
+                    self.wickets_fallen,
+                    self.striker.bat_out_rate,
+                    self.runs_scored,
+                    self.target,
+                )
+                self.calculate_batter_bowler_probabilities()
+                self.predict_ball_outcome(self.run_probabilities)
+        else:
+            while self.balls_bowled < (over + 1) * 6 and self.wickets_fallen < 10:
+                balls_in_over += 1
+                self.overs = f"{over}.{balls_in_over}"
+                self.settings.adjust_batsman_settings(
+                    self.batting_team.match_trackers.get(self.striker.name),
+                    self.striker,
+                    self.wickets_fallen,
+                    self.balls_bowled,
+                    self.runs_scored,
+                    self.striker.bat_out_rate,
+                )
+                self.settings.first_innings_settings(
+                    self.striker,
+                    self.balls_bowled,
+                    self.wickets_fallen,
+                    self.striker.bat_out_rate,
+                )
+                self.calculate_batter_bowler_probabilities()
+                self.predict_ball_outcome(self.run_probabilities)
+
+    def predict_ball_outcome(self, run_probabilities):
+        if self.current_bowler.bowl_wide_rate > random.uniform(0, 1):
+            self.runs_scored += 1
+            self.utils.update_bowler_tracker(
+                self.get_tracker(self.bowling_team, self.current_bowler),
+                1,
+                0,
+                False,
+                False,
+                False,
+                f"{self.balls_bowled}:Wide",
+            )
+            self.commentator.wide_message(
+                f"{self.runs_scored}/{self.wickets_fallen}",
+                self.batting_team,
+                self.bowling_team,
+                self.striker,
+                self.current_bowler,
+                self.overs,
             )
             return
-        else:
-            total = sum(den[val] for val in den)
-            denominationProbabilties = []
-            last = 0
-            for denom in den:
-                denomObj = {
-                    "denomination": denom,
-                    "start": last,
-                    "end": last + den[denom],
-                }
-                denominationProbabilties.append(denomObj)
-                last += den[denom]
-            self.balls += 1
-            decider = random.uniform(0, total)
-            for prob in denominationProbabilties:
-                if prob["start"] <= decider < prob["end"]:
-                    run = int(prob["denomination"])
-                    self.score += run
-                    if run != 0:
-                        self.updateRun(run)
-                        if run % 2 == 1:
-                            self.changeStrike()
-                        return run
-                    elif run == 0:
-                        probOut = self.outAvg * (total / den["0"])
-                        outDecider = random.uniform(0, 1)
-                        logging.info("probOut: %f, outDecider: %f", probOut, outDecider)
-                        if probOut > outDecider:
-                            self.wickets += 1
-                            total_o = 0
-                            last_o = 0
-                            total_o = sum(
-                                self.outTypeAvg[val] for val in self.outTypeAvg
-                            )
-                            probs_o = []
-                            for out_k in self.outTypeAvg:
-                                outobj = {
-                                    "type": out_k,
-                                    "start": last_o,
-                                    "end": last_o + self.outTypeAvg[out_k],
-                                }
-                                probs_o.append(outobj)
-                                last_o += self.outTypeAvg[out_k]
-                            typeDeterminer = random.uniform(0, total_o)
-                            for type_ in probs_o:
-                                if (
-                                    type_["start"] <= typeDeterminer
-                                    and type_["end"] > typeDeterminer
-                                ):
-                                    self.wicketType(type_["type"])
-                        else:
-                            self.updateRun(run)
-                            return run
 
-    def updateRun(self, run):
-        self.UpdateBowlerTracker(
-            self.CurrentBowler,
-            run,
+        total_probability = sum(run_probabilities[val] for val in run_probabilities)
+        last_end = 0
+        run_ranges = []
+        for denom in run_probabilities:
+            run_range = {
+                "run": denom,
+                "start": last_end,
+                "end": last_end + run_probabilities[denom],
+            }
+            run_ranges.append(run_range)
+            last_end += run_probabilities[denom]
+        self.balls_bowled += 1
+        random_num = random.uniform(0, total_probability)
+
+        for run_range in run_ranges:
+            if run_range["start"] <= random_num < run_range["end"]:
+                runs = int(run_range["run"])
+                self.runs_scored += runs
+                if runs != 0:
+                    self.update_runs(runs)
+                    if runs % 2 == 1:
+                        self.change_strike()
+                    return runs
+                else:
+                    out_probability = self.out_probability * (
+                        total_probability / run_probabilities["0"]
+                    )
+                    out_chance = random.uniform(0, 1)
+                    if out_probability > out_chance:
+                        self.wickets_fallen += 1
+                        total_dismissals = sum(
+                            self.dismissal_probabilities[val]
+                            for val in self.dismissal_probabilities
+                        )
+                        last_end = 0
+                        dismissal_ranges = []
+                        for dismissal in self.dismissal_probabilities:
+                            dismissal_range = {
+                                "dismissal": dismissal,
+                                "start": last_end,
+                                "end": last_end
+                                + self.dismissal_probabilities[dismissal],
+                            }
+                            dismissal_ranges.append(dismissal_range)
+                            last_end += self.dismissal_probabilities[dismissal]
+                        random_dismissal = random.uniform(0, total_dismissals)
+                        for dismissal_range in dismissal_ranges:
+                            if (
+                                dismissal_range["start"]
+                                <= random_dismissal
+                                < dismissal_range["end"]
+                            ):
+                                self.wicketType(dismissal_range["dismissal"])
+                    else:
+                        self.update_runs(runs)
+                        return runs
+
+    def update_runs(self, runs):
+        self.utils.update_bowler_tracker(
+            self.get_tracker(self.bowling_team, self.current_bowler),
+            runs,
             1,
             False,
             False,
             False,
-            f"{self.balls}:{run}",
+            f"{self.balls_bowled}:{runs}",
         )
-        self.UpdateBatterTracker(self.onStrike, run, 1, f"{self.balls}:{run}")
-        self.commentator.RunMessage(
-            f"{self.score}/{self.wickets}",
-            self.battingTeam,
-            self.bowlingTeam,
-            self.onStrike,
-            self.CurrentBowler,
-            run,
-            self.balls,
+        self.utils.update_batter_tracker(
+            self.get_tracker(self.batting_team, self.striker),
+            runs,
+            1,
+            f"{self.balls_bowled}:{runs}",
+        )
+        self.commentator.run_message(
+            f"{self.runs_scored}/{self.wickets_fallen}",
+            self.batting_team,
+            self.bowling_team,
+            self.striker,
+            self.current_bowler,
+            runs,
+            self.overs,
         )
 
-    def powerplayPick(self, over, bowlerInp):
-        bowlerDict = self.bowlingTeam.MatchTracker.get(bowlerInp.displayName)
-        bowlerToReturn = bowlerInp
-        if bowlerDict.ballsDelivered > 0 and (
-            (
-                bowlerDict.ballsDelivered > 11
-                or (bowlerDict.runsGiven / bowlerDict.ballsDelivered) > 1.7
-            )
-            and (
-                bowlerDict.ballsDelivered > 11
-                or (bowlerDict.wicketsTaken / bowlerDict.ballsDelivered) < 0.091
-            )
-        ):
-            valid = False  # continue this
-            localBowling = sorted(
-                self.bowlingOrder, key=lambda k: k.oversAvg[str(over + 1)]
-            )
-            localBowling.reverse()
-            while not valid:
-                pick = localBowling[random.randint(0, 3)]
-                pickInfo = self.bowlingTeam.MatchTracker.get(pick.displayName)
-                if pickInfo.ballsDelivered < 11 and self.PreviousBowler != pick:
-                    bowlerToReturn = pick
-                    valid = True
-        return bowlerToReturn
+    def select_powerplay_bowler(self, over, current_bowler: Player):
+        bowler_stats: Tracker = self.bowling_team.match_trackers.get(
+            current_bowler.name
+        )
 
-    def inDeathBowlers(self, bowler):
-        return bowler.displayName in [
-            self.death_bowlers[0].displayName,
-            self.death_bowlers[1].displayName,
-            self.death_bowlers[2].displayName,
-        ]
-
-    def middleOversPick(self, bowler, middle_bowlers):
-        # sourcery skip: low-code-quality
-        bowlerDict = self.bowlingTeam.MatchTracker.get(bowler.displayName)
-        bowlerToReturn = bowler
-        if self.inDeathBowlers(bowlerToReturn) and bowlerDict.ballsDelivered > 0:
-            if (
-                (bowlerDict.ballsDelivered > 17)
-                or (bowlerDict.runsGiven / bowlerDict.ballsDelivered) > 1.5
-                or (
-                    (bowlerDict.runsGiven / bowlerDict.ballsDelivered)
-                    - (self.balls / self.score)
-                )
-                > 0.2
-            ) and (
-                bowlerDict.ballsDelivered > 17
-                or (bowlerDict.runsGiven / bowlerDict.ballsDelivered < 0.088)
-            ):
-                loopIndex = 3
-                playersExp = sorted(
-                    self.bowlingOrder, key=lambda k: k.bowlBallsTotalRate
-                )
-                playersExp.reverse()
-                valid = False
-                expIndex = 0
-                for pexp in playersExp:
-                    if expIndex >= 4:
-                        break
-                    if not self.inDeathBowlers(pexp) and (
-                        self.bowlingTeam.MatchTracker.get(
-                            pexp.displayName
-                        ).ballsDelivered
-                        < 7
-                        and pexp.displayName != self.PreviousBowler.displayName
-                    ):
-                        bowlerToReturn = pexp
-                        valid = True
-                    expIndex += 1
-
-                while not valid:
-                    pick = middle_bowlers[random.randint(0, loopIndex)]
-                    pickInfo = self.bowlingTeam.MatchTracker.get(pick.displayName)
-                    if pickInfo.ballsDelivered == 0:
-                        bowlerToReturn = pick
-                        valid = True
-                    elif self.inDeathBowlers(pickInfo):
-                        if pickInfo.ballsDelivered < 11:
-                            if pickInfo.runsGiven / pickInfo.ballsDelivered < 1.5:
-                                if (
-                                    pickInfo.displayName
-                                    != self.PreviousBowler.displayName
-                                ):
-                                    bowlerToReturn = pick.ballsDelivered
-                                    valid = True
-                            elif pickInfo.runsGiven / pickInfo > 0.088:
-                                if (
-                                    pickInfo.displayName
-                                    != self.PreviousBowler.displayName
-                                ):
-                                    bowlerToReturn = pick
-                                    valid = True
-                    elif (
-                        pickInfo.ballsDelivered < 24
-                        and (pickInfo.runsGiven / pickInfo.ballsDelivered) < 1.5
-                    ):
-                        if pickInfo.displayName != self.PreviousBowler.displayName:
-                            bowlerToReturn = pick
-                            valid = True
-                    elif (
-                        pickInfo.ballsDelivered < 11
-                        and pickInfo.runsGiven / pickInfo.ballsDelivered > 0.088
-                    ):
-                        if pickInfo.displayName != self.PreviousBowler.displayName:
-                            bowlerToReturn = pick
-                            valid = True
-                    loopIndex += 1
-                    if loopIndex >= 6:
-                        for i2 in range(7):
-                            picked_ = middle_bowlers[i2]
-                            if (
-                                not self.inDeathBowlers(picked_)
-                                and picked_.displayName
-                                != self.PreviousBowler.displayName
-                            ):
-                                bowlerToReturn = picked_
-                                valid = True
-
-        elif (bowlerDict.ballsDelivered) != 0 and (
-            (
-                (bowlerDict.ballsDelivered > 19)
-                or (bowlerDict.runsGiven / bowlerDict.ballsDelivered) > 1.6
-                or (
-                    (bowlerDict.runsGiven / bowlerDict.ballsDelivered)
-                    - (self.balls / self.score)
-                )
-                > 0.2
-            )
-            and (
-                bowlerDict.ballsDelivered > 19
-                or (bowlerDict.runsGiven / bowlerDict.ballsDelivered < 0.095)
-            )
-        ):
-            valid = False
-            loopIndex = 3
-            playersExp = sorted(self.bowlingOrder, key=lambda k: k.bowlBallsTotalRate)
-            playersExp.reverse()
-            expIndex = 0
-            for pexp in playersExp:
-                if expIndex >= 4:
-                    break
-                if not self.inDeathBowlers(pexp) and (
-                    self.bowlingTeam.MatchTracker.get(pexp.displayName).ballsDelivered
-                    < 7
-                    and pexp.displayName != self.PreviousBowler.displayName
-                ):
-                    bowlerToReturn = pexp
-                    valid = True
-                expIndex += 1
-            while not valid:
-                pick = middle_bowlers[random.randint(0, loopIndex)]
-                pickInfo = self.bowlingTeam.MatchTracker.get(pick.displayName)
-                if pickInfo.ballsDelivered == 0:
-                    bowlerToReturn = pick
-                    valid = True
-                elif self.inDeathBowlers(pickInfo):
-                    if (
-                        0 < pickInfo.ballsDelivered < 11
-                        and ((pickInfo.runsGiven / pickInfo.ballsDelivered) < 1.7)
-                        or (pickInfo.runsGiven / pickInfo.ballsDelivered) > 0.088
-                    ) and pickInfo.displayName != self.PreviousBowler.displayName:
-                        bowlerToReturn = pick
-                        valid = True
-                elif (
-                    0 < pickInfo.ballsDelivered < 24
-                    and ((pickInfo.runsGiven / pickInfo.ballsDelivered) < 1.6)
-                    or (pickInfo.runsGiven / pickInfo.ballsDelivered < 0.1)
-                ) and pickInfo.displayName != self.PreviousBowler.displayName:
-                    bowlerToReturn = pick
-                    valid = True
-                loopIndex += 1
-                if loopIndex >= 6:
-                    for i2 in range(7):
-                        picked_ = middle_bowlers[i2]
-                        if (
-                            not self.inDeathBowlers(picked_)
-                            and picked_.displayName != self.PreviousBowler.displayName
-                        ):
-                            bowlerToReturn = picked_
-                            valid = True
-        return bowlerToReturn
-
-    def deathOversPick(self, bowlerInp, death_bowlers):
-        # sourcery skip: low-code-quality
-        bowlerDict = self.bowlingTeam.MatchTracker.get(bowlerInp.displayName)
-        bowlerToReturn = bowlerInp
         if (
-            not self.inDeathBowlers(bowlerToReturn)
-            or 0 < bowlerDict.ballsDelivered > 23
+            bowler_stats.balls_bowled > 0
+            and (
+                bowler_stats.balls_bowled > 11
+                or bowler_stats.runs_conceded / bowler_stats.balls_bowled > 1.7
+            )
+            and (
+                bowler_stats.balls_bowled > 11
+                or bowler_stats.wickets_taken / bowler_stats.balls_bowled < 0.091
+            )
         ):
-            valid = False
-            pickerIndex = 0
-            while not valid:
-                pick = death_bowlers[pickerIndex]
-                pickInfo = self.bowlingTeam.MatchTracker.get(pick.displayName)
-                if pickInfo.ballsDelivered == 0:
-                    bowlerToReturn = pick
-                    valid = True
-                elif (
-                    pickInfo.ballsDelivered < 19
-                    and pickInfo.displayName != self.PreviousBowler.displayName
+            local_bowlers = [
+                bowler
+                for bowler in self.bowling_order
+                if bowler.overs_avg[str(over + 1)] is not None
+            ]
+            local_bowlers.sort(key=lambda k: k.overs_avg[str(over + 1)], reverse=True)
+
+            while True:
+                bowler_pick: Player = random.choice(local_bowlers)
+                bowler_pick_stats: Tracker = self.bowling_team.match_trackers.get(
+                    bowler_pick.name
+                )
+                if (
+                    bowler_pick_stats.balls_bowled < 11
+                    and self.previous_bowler != bowler_pick
                 ):
-                    for track in self.bowlingTeam.MatchTracker:
-                        tracker = self.bowlingTeam.MatchTracker.get(track)
-                        if self.PreviousBowler.displayName != track and (
-                            tracker.ballsDelivered != 0 and tracker.ballsDelivered < 23
-                        ):
-                            if tracker.runsGiven == 0:
-                                bowlerToReturn = pick
-                                valid = True
+                    return bowler_pick
+        return current_bowler
 
+    def is_death_bowler(self, bowler: Player):
+        return bowler in self.death_bowlers[:4]
+
+    def select_middle_overs_bowler(self, current_bowler: Player, middle_bowlers):
+        bowler_stats: Tracker = self.bowling_team.match_trackers.get(
+            current_bowler.name
+        )
+        selected_bowler = current_bowler
+
+        if (
+            self.is_death_bowler(selected_bowler)
+            and bowler_stats.balls_bowled > 0
+            and (
+                (
+                    bowler_stats.balls_bowled > 17
+                    or bowler_stats.runs_conceded / bowler_stats.balls_bowled > 1.5
+                    or (
+                        bowler_stats.runs_conceded / bowler_stats.balls_bowled
+                        - self.runs_scored / self.balls_bowled
+                    )
+                    > 0.2
+                )
+                and (
+                    bowler_stats.balls_bowled > 17
+                    or bowler_stats.runs_conceded / bowler_stats.balls_bowled < 0.088
+                )
+            )
+        ):
+            bowlers_by_strike_rate: list(Player) = sorted(
+                self.bowling_order, key=lambda k: k.bowl_balls_faced_rate, reverse=True
+            )
+            for bowler in bowlers_by_strike_rate:
+                if not self.is_death_bowler(bowler) and (
+                    self.bowling_team.match_trackers.get(bowler.name).balls_bowled < 7
+                    and bowler.name != self.previous_bowler.name
+                ):
+                    selected_bowler = bowler
+                    break
+
+            if selected_bowler == current_bowler:
+                for _ in range(7):
+                    bowler_pick: Player = random.choice(middle_bowlers)
+                    bowler_pick_stats: Tracker = self.bowling_team.match_trackers.get(
+                        bowler_pick.name
+                    )
+                    if (
+                        bowler_pick_stats.balls_bowled == 0
+                        and not self.is_death_bowler(bowler_pick_stats)
+                    ):
+                        selected_bowler = bowler_pick
+                        break
+                    elif self.is_death_bowler(bowler_pick_stats):
+                        if bowler_pick_stats.balls_bowled < 11:
+                            if (
+                                bowler_pick_stats.runs_conceded
+                                / bowler_pick_stats.balls_bowled
+                                < 1.5
+                            ):
+                                if bowler_pick_stats.name != self.previous_bowler.name:
+                                    selected_bowler = bowler_pick
+                                    break
                             elif (
-                                (tracker.ballsDelivered / tracker.runsGiven) < 1.2
-                            ) or (tracker.wicketsTaken / tracker.ballsDelivered) > 0.16:
-                                bowlerToReturn = pick
-                                valid = True
-                    bowlerToReturn = pick
-                    valid = True
-                pickerIndex += 1
-        return bowlerToReturn
+                                bowler_pick_stats.runs_conceded
+                                / bowler_pick_stats.balls_bowled
+                                > 0.088
+                            ):
+                                if bowler_pick_stats.name != self.previous_bowler.name:
+                                    selected_bowler = bowler_pick
+                                    break
+                    elif (
+                        0 < bowler_pick_stats.balls_bowled < 24
+                        and bowler_pick_stats.runs_conceded
+                        / bowler_pick_stats.balls_bowled
+                        < 1.5
+                    ):
+                        if bowler_pick_stats.name != self.previous_bowler.name:
+                            selected_bowler = bowler_pick
+                            break
+                    elif (
+                        0 < bowler_pick_stats.balls_bowled < 11
+                        and bowler_pick_stats.runs_conceded
+                        / bowler_pick_stats.balls_bowled
+                        > 0.088
+                    ):
+                        if bowler_pick_stats.name != self.previous_bowler.name:
+                            selected_bowler = bowler_pick
+                            break
 
-    def overTracker(self):
+        elif bowler_stats.balls_bowled != 0 and (
+            (
+                bowler_stats.balls_bowled > 19
+                or bowler_stats.runs_conceded / bowler_stats.balls_bowled > 1.6
+                or (
+                    bowler_stats.runs_conceded / bowler_stats.balls_bowled
+                    - self.balls_bowled / self.runs_scored
+                )
+                > 0.2
+            )
+            and (
+                bowler_stats.balls_bowled > 19
+                or bowler_stats.runs_conceded / bowler_stats.balls_bowled < 0.095
+            )
+        ):
+            bowlers_by_strike_rate = sorted(
+                self.bowling_order, key=lambda k: k.bowl_balls_faced_rate, reverse=True
+            )
+            for bowler in bowlers_by_strike_rate:
+                if not self.is_death_bowler(bowler) and (
+                    self.bowling_team.match_trackers.get(bowler.name).balls_bowled < 7
+                    and bowler.name != self.previous_bowler.name
+                ):
+                    selected_bowler = bowler
+                    break
+
+            if selected_bowler == current_bowler:
+                for _ in range(7):
+                    bowler_pick = random.choice(middle_bowlers)
+                    bowler_pick_stats = self.bowling_team.match_trackers.get(
+                        bowler_pick.name
+                    )
+                    if (
+                        bowler_pick_stats.balls_bowled == 0
+                        and not self.is_death_bowler(bowler_pick_stats)
+                    ):
+                        selected_bowler = bowler_pick
+                        break
+                    elif self.is_death_bowler(bowler_pick_stats):
+                        if (
+                            0 < bowler_pick_stats.balls_bowled < 11
+                            and (
+                                bowler_pick_stats.runs_conceded
+                                / bowler_pick_stats.balls_bowled
+                                < 1.7
+                                or bowler_pick_stats.runs_conceded
+                                / bowler_pick_stats.balls_bowled
+                                > 0.088
+                            )
+                            and bowler_pick_stats.name != self.previous_bowler.name
+                        ):
+                            selected_bowler = bowler_pick
+                            break
+                    elif (
+                        0 < bowler_pick_stats.balls_bowled < 24
+                        and (
+                            bowler_pick_stats.runs_conceded
+                            / bowler_pick_stats.balls_bowled
+                            < 1.6
+                            or bowler_pick_stats.runs_conceded
+                            / bowler_pick_stats.balls_bowled
+                            < 0.1
+                        )
+                        and bowler_pick_stats.name != self.previous_bowler.name
+                    ):
+                        selected_bowler = bowler_pick
+                        break
+
+        return selected_bowler
+
+    def select_death_overs_bowler(self, current_bowler: Player, death_bowlers):
+        current_bowler_stats: Tracker = self.bowling_team.match_trackers.get(
+            current_bowler.name
+        )
+        selected_bowler = current_bowler
+
+        if (
+            not self.is_death_bowler(selected_bowler)
+            or 0 < current_bowler_stats.balls_bowled > 23
+        ):
+            for bowler in death_bowlers:
+                bowler_stats: Tracker = self.bowling_team.match_trackers.get(
+                    bowler.name
+                )
+                if bowler_stats.balls_bowled == 0:
+                    selected_bowler = bowler
+                    break
+                elif (
+                    bowler_stats.balls_bowled < 19
+                    and bowler_stats.name != self.previous_bowler.name
+                    and any(
+                        tracker.balls_bowled != 0
+                        and tracker.balls_bowled < 23
+                        and (
+                            tracker.runs_conceded == 0
+                            or (tracker.balls_bowled / tracker.runs_conceded) < 1.2
+                            or (tracker.wickets_taken / tracker.balls_bowled) > 0.16
+                        )
+                        for track, tracker in self.bowling_team.match_trackers.items()
+                        if self.previous_bowler.name != track
+                    )
+                ):
+                    selected_bowler = bowler
+                    break
+
+        return selected_bowler
+
+    def play_innings(self):
         self.opening_bowlers = self.utils._extracted_from_blowers(
-            self.bowlingOrder, "oversAvg", "1"
+            self.bowling_order, "overs_avg", "1"
         )
         self.middle_bowlers = self.utils._extracted_from_blowers(
-            self.bowlingOrder, "oversAvg", "10"
+            self.bowling_order, "overs_avg", "10"
         )
         self.death_bowlers = self.utils._extracted_from_blowers(
-            self.bowlingOrder, "oversAvg", "19"
+            self.bowling_order, "overs_avg", "19"
         )
+
         for i in range(20):
+            if self.wickets_fallen >= 10:
+                break
             if i != 0:
-                self.changeStrike()
+                self.change_strike()
+                self.commentator.change_in_overs_message(
+                    self.runs_scored,
+                    self.batting_team,
+                    self.bowling_team,
+                    self.overs,
+                    self.previous_bowler,
+                    self.current_bowler,
+                )
             if i < 2:
-                self.ballDelivery(
+                self.deliver_ball(
                     i, self.opening_bowlers[0]
-                ) if i % 2 == 0 else self.ballDelivery(i, self.opening_bowlers[1])
-                self.PreviousBowler = (
+                ) if i % 2 == 0 else self.deliver_ball(i, self.opening_bowlers[1])
+                self.previous_bowler = (
                     self.opening_bowlers[0] if i % 2 != 1 else self.opening_bowlers[1]
                 )
             if i < 6:
-                self.ballDelivery(
-                    i, self.powerplayPick(i, self.CurrentBowler)
-                ) if i % 2 == 1 else self.ballDelivery(
-                    i, self.powerplayPick(i, self.PreviousBowler)
+                self.deliver_ball(
+                    i, self.select_powerplay_bowler(i, self.current_bowler)
+                ) if i % 2 == 1 else self.deliver_ball(
+                    i, self.select_powerplay_bowler(i, self.previous_bowler)
                 )
             if i < 15:
-                self.ballDelivery(
-                    i, self.middleOversPick(self.CurrentBowler, self.middle_bowlers)
-                ) if i % 2 == 1 else self.ballDelivery(
-                    i, self.middleOversPick(self.PreviousBowler, self.middle_bowlers)
+                self.deliver_ball(
+                    i,
+                    self.select_middle_overs_bowler(
+                        self.current_bowler, self.middle_bowlers
+                    ),
+                ) if i % 2 == 1 else self.deliver_ball(
+                    i,
+                    self.select_middle_overs_bowler(
+                        self.previous_bowler, self.middle_bowlers
+                    ),
                 )
             else:
-                self.ballDelivery(
-                    i, self.deathOversPick(self.CurrentBowler, self.death_bowlers)
-                ) if i % 2 == 1 else self.ballDelivery(
-                    i, self.deathOversPick(self.PreviousBowler, self.death_bowlers)
+                self.deliver_ball(
+                    i,
+                    self.select_death_overs_bowler(
+                        self.current_bowler, self.death_bowlers
+                    ),
+                ) if i % 2 == 1 else self.deliver_ball(
+                    i,
+                    self.select_death_overs_bowler(
+                        self.previous_bowler, self.death_bowlers
+                    ),
                 )
+        return self.runs_scored if self.target is None else self.match_result()

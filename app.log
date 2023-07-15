@@ -1,172 +1,964 @@
-INFO - bastmen: Ruturaj Gaikwad | bowler: Kagiso Rabada | 0.06142809784252623
-INFO - bastmen: Faf du Plessis | bowler: Kagiso Rabada | 0.06013596056586196
-INFO - bastmen: Faf du Plessis | bowler: Kagiso Rabada | 0.06013596056586196
-INFO - probOut: 0.000000, outDecider: 0.487897
-INFO - bastmen: Faf du Plessis | bowler: Kagiso Rabada | 0.06013596056586196
-INFO - bastmen: Faf du Plessis | bowler: Kagiso Rabada | 0.06013596056586196
-INFO - bastmen: Faf du Plessis | bowler: Kagiso Rabada | 0.06013596056586196
-INFO - bastmen: Faf du Plessis | bowler: Ravichandran Ashwin | 0.05240882818212578
-INFO - probOut: 0.000000, outDecider: 0.527526
-INFO - bastmen: Faf du Plessis | bowler: Ravichandran Ashwin | 0.05240882818212578
-INFO - bastmen: Ruturaj Gaikwad | bowler: Ravichandran Ashwin | 0.05370096545879005
-INFO - bastmen: Faf du Plessis | bowler: Ravichandran Ashwin | 0.05240882818212578
-INFO - probOut: 0.000000, outDecider: 0.748633
-INFO - bastmen: Faf du Plessis | bowler: Ravichandran Ashwin | 0.05240882818212578
-INFO - bastmen: Faf du Plessis | bowler: Ravichandran Ashwin | 0.05240882818212578
-INFO - probOut: 0.000000, outDecider: 0.099776
-INFO - bastmen: Ruturaj Gaikwad | bowler: Ravichandran Ashwin | 0.08152330313484574
-INFO - bastmen: Faf du Plessis | bowler: Ravichandran Ashwin | 0.08023116585818146
-INFO - bastmen: Ruturaj Gaikwad | bowler: Ravichandran Ashwin | 0.08152330313484574
-INFO - probOut: 0.171808, outDecider: 0.760778
-INFO - bastmen: Ruturaj Gaikwad | bowler: Ravichandran Ashwin | 0.08152330313484574
-INFO - bastmen: Faf du Plessis | bowler: Ravichandran Ashwin | 0.08023116585818146
-INFO - bastmen: Faf du Plessis | bowler: Ravichandran Ashwin | 0.08023116585818146
-INFO - bastmen: Faf du Plessis | bowler: Avesh Khan | 0.04759900133772625
-INFO - bastmen: Ruturaj Gaikwad | bowler: Avesh Khan | 0.048891138614390525
-INFO - bastmen: Faf du Plessis | bowler: Avesh Khan | 0.04759900133772625
-INFO - bastmen: Faf du Plessis | bowler: Avesh Khan | 0.04759900133772625
-INFO - probOut: 0.127902, outDecider: 0.704742
-INFO - bastmen: Faf du Plessis | bowler: Avesh Khan | 0.04759900133772625
-INFO - bastmen: Ruturaj Gaikwad | bowler: Avesh Khan | 0.048891138614390525
-INFO - probOut: 0.087530, outDecider: 0.582034
-INFO - bastmen: Faf du Plessis | bowler: Avesh Khan | 0.06614722645509671
-INFO - probOut: 0.177743, outDecider: 0.533161
-INFO - bastmen: Faf du Plessis | bowler: Avesh Khan | 0.06614722645509671
-INFO - bastmen: Faf du Plessis | bowler: Avesh Khan | 0.06614722645509671
-INFO - probOut: 0.177743, outDecider: 0.307579
-INFO - bastmen: Faf du Plessis | bowler: Avesh Khan | 0.06614722645509671
-INFO - bastmen: Faf du Plessis | bowler: Avesh Khan | 0.06614722645509671
-INFO - probOut: 0.312096, outDecider: 0.461346
-INFO - bastmen: Faf du Plessis | bowler: Avesh Khan | 0.06614722645509671
-INFO - probOut: 0.312096, outDecider: 0.436569
-INFO - bastmen: Ruturaj Gaikwad | bowler: Anrich Nortje | 0.05873345273302044
-INFO - bastmen: Faf du Plessis | bowler: Anrich Nortje | 0.05744131545635617
-INFO - probOut: 0.288703, outDecider: 0.015463
-INFO - bastmen: Deepak Chahar | bowler: Anrich Nortje | 0.10393785524874372
-INFO - probOut: 0.148626, outDecider: 0.974005
-INFO - bastmen: Deepak Chahar | bowler: Anrich Nortje | 0.10393785524874372
-INFO - bastmen: Ruturaj Gaikwad | bowler: Anrich Nortje | 0.05873345273302044
-INFO - bastmen: Ruturaj Gaikwad | bowler: Anrich Nortje | 0.05873345273302044
-INFO - bastmen: Ruturaj Gaikwad | bowler: Anrich Nortje | 0.0772816778503909
-INFO - probOut: 0.199594, outDecider: 0.185898
-INFO - bastmen: Suresh Raina | bowler: Anrich Nortje | 0.08057431566023182
-INFO - bastmen: Deepak Chahar | bowler: Anrich Nortje | 0.12248608036611416
-INFO - bastmen: Suresh Raina | bowler: Anrich Nortje | 0.08057431566023182
-INFO - bastmen: Suresh Raina | bowler: Anrich Nortje | 0.08057431566023182
-INFO - bastmen: Deepak Chahar | bowler: Anrich Nortje | 0.12248608036611416
-INFO - probOut: 0.220617, outDecider: 0.536957
-INFO - bastmen: Suresh Raina | bowler: Anrich Nortje | 0.08984842821891705
-INFO - bastmen: Suresh Raina | bowler: Anrich Nortje | 0.08984842821891705
-INFO - bastmen: Suresh Raina | bowler: Anrich Nortje | 0.08984842821891705
-INFO - bastmen: Deepak Chahar | bowler: Anrich Nortje | 0.1317601929247994
-INFO - bastmen: Suresh Raina | bowler: Anrich Nortje | 0.08984842821891705
-INFO - bastmen: Deepak Chahar | bowler: Anrich Nortje | 0.1317601929247994
-INFO - probOut: 0.244004, outDecider: 0.033013
-INFO - bastmen: Suresh Raina | bowler: Axar Patel | 0.04783502937688627
-INFO - bastmen: Shardul Thakur | bowler: Axar Patel | 0.12446901630499085
-INFO - probOut: 0.146690, outDecider: 0.622972
-INFO - bastmen: Shardul Thakur | bowler: Axar Patel | 0.12446901630499085
-INFO - probOut: 0.146690, outDecider: 0.637295
-INFO - bastmen: Shardul Thakur | bowler: Axar Patel | 0.12446901630499085
-INFO - bastmen: Suresh Raina | bowler: Axar Patel | 0.04783502937688627
-INFO - bastmen: Shardul Thakur | bowler: Axar Patel | 0.12446901630499085
-INFO - bastmen: Shardul Thakur | bowler: Axar Patel | 0.13374312886367606
-INFO - bastmen: Suresh Raina | bowler: Axar Patel | 0.0571091419355715
-INFO - probOut: 0.020357, outDecider: 0.675500
-INFO - bastmen: Suresh Raina | bowler: Axar Patel | 0.0571091419355715
-INFO - bastmen: Shardul Thakur | bowler: Axar Patel | 0.13374312886367606
-INFO - bastmen: Shardul Thakur | bowler: Axar Patel | 0.13374312886367606
-INFO - bastmen: Shardul Thakur | bowler: Axar Patel | 0.13374312886367606
-INFO - probOut: 0.169566, outDecider: 0.910707
-INFO - bastmen: Suresh Raina | bowler: Axar Patel | 0.06638325449425674
-INFO - bastmen: Shardul Thakur | bowler: Axar Patel | 0.1430172414223613
-INFO - probOut: 0.229443, outDecider: 0.326559
-INFO - bastmen: Shardul Thakur | bowler: Axar Patel | 0.1430172414223613
-INFO - bastmen: Shardul Thakur | bowler: Axar Patel | 0.1430172414223613
-INFO - probOut: 0.229443, outDecider: 0.147948
-INFO - bastmen: Ambati Rayudu | bowler: Axar Patel | 0.06469658838701497
-INFO - bastmen: Suresh Raina | bowler: Axar Patel | 0.06638325449425674
-INFO - bastmen: Ambati Rayudu | bowler: Axar Patel | 0.07397070094570021
-INFO - bastmen: Suresh Raina | bowler: Axar Patel | 0.07565736705294196
-INFO - bastmen: Suresh Raina | bowler: Axar Patel | 0.07565736705294196
-INFO - bastmen: Ambati Rayudu | bowler: Axar Patel | 0.07397070094570021
-INFO - probOut: 0.024207, outDecider: 0.940963
-INFO - bastmen: Ambati Rayudu | bowler: Axar Patel | 0.07397070094570021
-INFO - probOut: 0.024207, outDecider: 0.603965
-INFO - bastmen: Ambati Rayudu | bowler: Axar Patel | 0.07397070094570021
-INFO - probOut: 0.024207, outDecider: 0.254502
-INFO - bastmen: Suresh Raina | bowler: Anrich Nortje | 0.09912254077760228
-INFO - probOut: 0.140665, outDecider: 0.193314
-INFO - bastmen: Suresh Raina | bowler: Anrich Nortje | 0.09912254077760228
-INFO - bastmen: Suresh Raina | bowler: Anrich Nortje | 0.09912254077760228
-INFO - probOut: 0.140665, outDecider: 0.642830
-INFO - bastmen: Suresh Raina | bowler: Anrich Nortje | 0.09912254077760228
-INFO - probOut: 0.140665, outDecider: 0.340349
-INFO - bastmen: Suresh Raina | bowler: Anrich Nortje | 0.09912254077760228
-INFO - probOut: 0.140665, outDecider: 0.459495
-INFO - bastmen: Suresh Raina | bowler: Anrich Nortje | 0.09912254077760228
-INFO - bastmen: Ambati Rayudu | bowler: Anrich Nortje | 0.09743587467036054
-INFO - probOut: 0.087528, outDecider: 0.658493
-INFO - bastmen: Suresh Raina | bowler: Avesh Khan | 0.08928022665897237
-INFO - probOut: 0.112481, outDecider: 0.727436
-INFO - bastmen: Suresh Raina | bowler: Avesh Khan | 0.08928022665897237
-INFO - bastmen: Ambati Rayudu | bowler: Avesh Khan | 0.08759356055173062
-INFO - probOut: 0.101446, outDecider: 0.244332
-INFO - bastmen: Ambati Rayudu | bowler: Avesh Khan | 0.08759356055173062
-INFO - bastmen: Ambati Rayudu | bowler: Avesh Khan | 0.08759356055173062
-INFO - bastmen: Ambati Rayudu | bowler: Avesh Khan | 0.08759356055173062
-INFO - probOut: 0.101446, outDecider: 0.440030
-INFO - bastmen: Suresh Raina | bowler: Kagiso Rabada | 0.08326896076973761
-INFO - probOut: 0.238444, outDecider: 0.100819
-INFO - bastmen: Dwayne Bravo | bowler: Kagiso Rabada | 0.09839501118990568
-INFO - probOut: 0.129542, outDecider: 0.843487
-INFO - bastmen: Dwayne Bravo | bowler: Kagiso Rabada | 0.09839501118990568
-INFO - probOut: 0.129542, outDecider: 0.978068
-INFO - bastmen: Dwayne Bravo | bowler: Kagiso Rabada | 0.09839501118990568
-INFO - bastmen: Ambati Rayudu | bowler: Kagiso Rabada | 0.08158229466249586
-INFO - probOut: 0.085225, outDecider: 0.187554
-INFO - bastmen: Ambati Rayudu | bowler: Kagiso Rabada | 0.08158229466249586
-INFO - bastmen: Dwayne Bravo | bowler: Kagiso Rabada | 0.1076691237485909
-INFO - bastmen: Ambati Rayudu | bowler: Kagiso Rabada | 0.09085640722118109
-INFO - bastmen: Ambati Rayudu | bowler: Kagiso Rabada | 0.09085640722118109
-INFO - probOut: 0.110251, outDecider: 0.793674
-INFO - bastmen: Ambati Rayudu | bowler: Kagiso Rabada | 0.09085640722118109
-INFO - probOut: 0.110251, outDecider: 0.285861
-INFO - bastmen: Ambati Rayudu | bowler: Kagiso Rabada | 0.09085640722118109
-INFO - probOut: 0.110251, outDecider: 0.708844
-INFO - bastmen: Ambati Rayudu | bowler: Kagiso Rabada | 0.09085640722118109
-INFO - probOut: 0.110251, outDecider: 0.069833
-INFO - bastmen: Dwayne Bravo | bowler: Kagiso Rabada | 0.11694323630727614
-INFO - bastmen: Sam Curran | bowler: Kagiso Rabada | 0.11064071529887279
-INFO - bastmen: Dwayne Bravo | bowler: Kagiso Rabada | 0.11694323630727614
-INFO - bastmen: Sam Curran | bowler: Kagiso Rabada | 0.11064071529887279
-INFO - bastmen: Dwayne Bravo | bowler: Kagiso Rabada | 0.11694323630727614
-INFO - bastmen: Sam Curran | bowler: Kagiso Rabada | 0.11064071529887279
-INFO - probOut: 0.152276, outDecider: 0.299351
-INFO - bastmen: Dwayne Bravo | bowler: Avesh Khan | 0.11368038963782566
-INFO - probOut: 0.277528, outDecider: 0.866927
-INFO - bastmen: Dwayne Bravo | bowler: Avesh Khan | 0.11368038963782566
-INFO - bastmen: Sam Curran | bowler: Avesh Khan | 0.10737786862942231
-INFO - bastmen: Sam Curran | bowler: Avesh Khan | 0.10737786862942231
-INFO - probOut: 0.294749, outDecider: 0.577594
-INFO - bastmen: Sam Curran | bowler: Avesh Khan | 0.10737786862942231
-INFO - probOut: 0.294749, outDecider: 0.706159
-INFO - bastmen: Sam Curran | bowler: Avesh Khan | 0.10737786862942231
-INFO - probOut: 0.294749, outDecider: 0.938730
-INFO - bastmen: Dwayne Bravo | bowler: Lalit Yadav | 0.06771567100024367
-INFO - bastmen: Sam Curran | bowler: Lalit Yadav | 0.06141314999184031
-INFO - probOut: 0.179326, outDecider: 0.019799
-INFO - bastmen: Ravindra Jadeja | bowler: Lalit Yadav | 0.04859263717132749
-INFO - probOut: 0.251307, outDecider: 0.518111
-INFO - bastmen: Ravindra Jadeja | bowler: Lalit Yadav | 0.04859263717132749
-INFO - bastmen: Ravindra Jadeja | bowler: Lalit Yadav | 0.04859263717132749
-INFO - probOut: 0.166207, outDecider: 0.848104
-INFO - bastmen: Ravindra Jadeja | bowler: Lalit Yadav | 0.04859263717132749
-INFO - bastmen: Ravindra Jadeja | bowler: Lalit Yadav | 0.057866749730012726
-INFO - bastmen: Dwayne Bravo | bowler: Lalit Yadav | 0.07698978355892891
-INFO - bastmen: Ravindra Jadeja | bowler: Lalit Yadav | 0.057866749730012726
-INFO - bastmen: Dwayne Bravo | bowler: Lalit Yadav | 0.07698978355892891
-INFO - probOut: 0.313154, outDecider: 0.930227
-INFO - bastmen: Dwayne Bravo | bowler: Lalit Yadav | 0.07698978355892891
-INFO - probOut: 0.313154, outDecider: 0.237503
-INFO - bastmen: Moeen Ali | bowler: Lalit Yadav | 0.07041660213912171
+INFO:root:**Commentator**:
+Welcome to the cricket match between Csk and Dc.
+Csk has sent their top players onto the field: ['Ruturaj Gaikwad', 'Faf du Plessis', 'Moeen Ali', 'Suresh Raina', 'Ambati Rayudu', 'Ravindra Jadeja', 'MS Dhoni', 'Sam Curran', 'Dwayne Bravo', 'Shardul Thakur', 'Deepak Chahar'].
+In response, Dc is ready to showcase their skills with their talented players: ['Prithvi Shaw', 'Shikhar Dhawan', 'Shreyas Iyer', 'Rishabh Pant', 'Shimron Hetmyer', 'Lalit Yadav', 'Axar Patel', 'Ravichandran Ashwin', 'Anrich Nortje', 'Kagiso Rabada', 'Avesh Khan'].
+INFO:root:**Commentator**:
+Dc has won the toss and elected to Bat first.
+INFO:root:**Commentator**:
+We have a great innings between Dc and Csk.
+The opening batsmen, Prithvi shaw and Shikhar dhawan, are at the crease.
+Deepak chahar is ready to bowl the first over for Csk.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Deepak chahar from Csk.
+Prithvi shaw scores 0 run(s) in the 0.1 over(s). Dc has a total score of 0/0.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Deepak chahar from Csk.
+Prithvi shaw scores 0 run(s) in the 0.2 over(s). Dc has a total score of 0/0.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Deepak chahar from Csk.
+Prithvi shaw scores 0 run(s) in the 0.3 over(s). Dc has a total score of 0/0.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Deepak chahar from Csk.
+Prithvi shaw scores 1 run(s) in the 0.4 over(s). Dc has a total score of 1/0.
+INFO:root:**Commentator**:
+Shikhar dhawan is at the crease, facing Deepak chahar from Csk.
+Shikhar dhawan scores 1 run(s) in the 0.5 over(s). Dc has a total score of 2/0.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Deepak chahar from Csk.
+Prithvi shaw scores 2 run(s) in the 0.6 over(s). Dc has a total score of 4/0.
+INFO:root:**Commentator**:
+We have a great innings between Dc and Csk.
+The opening batsmen, Prithvi shaw and Shikhar dhawan, are at the crease.
+Deepak chahar is ready to bowl the first over for Csk.
+INFO:root:**Commentator**:
+We have a great innings between Dc and Csk.
+The opening batsmen, Prithvi shaw and Shikhar dhawan, are at the crease.
+Deepak chahar is ready to bowl the first over for Csk.
+INFO:root:**Commentator**:
+The current over is being bowled by Deepak chahar for Csk.
+It's a change of ends for Deepak chahar as they continue their spell.
+The current score is 4 in the 1.0 over(s).
+INFO:root:**Commentator**:
+Shikhar dhawan is at the crease, facing Moeen ali from Csk.
+That's a fantastic shot! Shikhar dhawan smashes it for a FOUR!
+Shikhar dhawan scores 4 run(s) in the 1.1 over(s). Dc has a total score of 8/0.
+INFO:root:**Commentator**:
+Shikhar dhawan is at the crease, facing Moeen ali from Csk.
+Shikhar dhawan scores 2 run(s) in the 1.2 over(s). Dc has a total score of 10/0.
+INFO:root:**Commentator**:
+Shikhar dhawan is at the crease, facing Moeen ali from Csk.
+Shikhar dhawan scores 1 run(s) in the 1.3 over(s). Dc has a total score of 11/0.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Moeen ali from Csk.
+Prithvi shaw scores 0 run(s) in the 1.4 over(s). Dc has a total score of 11/0.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Moeen ali from Csk.
+Prithvi shaw scores 2 run(s) in the 1.5 over(s). Dc has a total score of 13/0.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Moeen ali from Csk.
+Prithvi shaw scores 2 run(s) in the 1.6 over(s). Dc has a total score of 15/0.
+INFO:root:**Commentator**:
+The current over is being bowled by Sam curran for Csk.
+It's a change of ends for Sam curran as they continue their spell.
+The current score is 15 in the 2.0 over(s).
+INFO:root:**Commentator**:
+Shikhar dhawan is at the crease, facing Sam curran from Csk.
+Shikhar dhawan scores 2 run(s) in the 2.1 over(s). Dc has a total score of 17/0.
+INFO:root:**Commentator**:
+Shikhar dhawan is at the crease, facing Sam curran from Csk.
+Shikhar dhawan scores 1 run(s) in the 2.2 over(s). Dc has a total score of 18/0.
+INFO:root:**Commentator**:
+Sam curran bowls a wide delivery to Prithvi shaw of Dc.
+Wide ball! The umpire signals an extra run for Dc. Score: 19/0.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Sam curran from Csk.
+Prithvi shaw scores 1 run(s) in the 2.4 over(s). Dc has a total score of 20/0.
+INFO:root:**Commentator**:
+Shikhar dhawan is at the crease, facing Sam curran from Csk.
+Shikhar dhawan scores 1 run(s) in the 2.5 over(s). Dc has a total score of 21/0.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Sam curran from Csk.
+Prithvi shaw scores 0 run(s) in the 2.6 over(s). Dc has a total score of 21/0.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Sam curran from Csk.
+That's a fantastic shot! Prithvi shaw smashes it for a FOUR!
+Prithvi shaw scores 4 run(s) in the 2.7 over(s). Dc has a total score of 25/0.
+INFO:root:**Commentator**:
+The current over is being bowled by Sam curran for Csk.
+It's a change of ends for Sam curran as they continue their spell.
+The current score is 25 in the 3.0 over(s).
+INFO:root:**Commentator**:
+Shikhar dhawan is at the crease, facing Sam curran from Csk.
+Shikhar dhawan scores 1 run(s) in the 3.1 over(s). Dc has a total score of 26/0.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Sam curran from Csk.
+Prithvi shaw scores 1 run(s) in the 3.2 over(s). Dc has a total score of 27/0.
+INFO:root:**Commentator**:
+Shikhar dhawan is at the crease, facing Sam curran from Csk.
+Shikhar dhawan scores 0 run(s) in the 3.3 over(s). Dc has a total score of 27/0.
+INFO:root:**Commentator**:
+Shikhar dhawan is at the crease, facing Sam curran from Csk.
+Shikhar dhawan scores 1 run(s) in the 3.4 over(s). Dc has a total score of 28/0.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Sam curran from Csk.
+Prithvi shaw scores 0 run(s) in the 3.5 over(s). Dc has a total score of 28/0.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Sam curran from Csk.
+That's a fantastic shot! Prithvi shaw smashes it for a FOUR!
+Prithvi shaw scores 4 run(s) in the 3.6 over(s). Dc has a total score of 32/0.
+INFO:root:**Commentator**:
+The current over is being bowled by Sam curran for Csk.
+It's a change of ends for Sam curran as they continue their spell.
+The current score is 32 in the 4.0 over(s).
+INFO:root:**Commentator**:
+Shikhar dhawan is at the crease, facing Moeen ali from Csk.
+Shikhar dhawan scores 0 run(s) in the 4.1 over(s). Dc has a total score of 32/0.
+INFO:root:**Commentator**:
+Shikhar dhawan is at the crease, facing Moeen ali from Csk.
+It's a maximum! Shikhar dhawan launches the ball into the stands for a SIX!
+Shikhar dhawan scores 6 run(s) in the 4.2 over(s). Dc has a total score of 38/0.
+INFO:root:**Commentator**:
+Shikhar dhawan is at the crease, facing Moeen ali from the Csk.
+Oh, what a catch! Shikhar dhawan is caught by Shardul thakur.
+Dc scores 0 run(s) in the 4.3 over(s). Total score: 38/1.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Dc. Anrich nortje strides to the crease.
+Moeen ali is ready to bowl the over for Csk.
+The current score is 38/1 in the 4.3 over(s).
+INFO:root:**Commentator**:
+Anrich nortje is at the crease, facing Moeen ali from Csk.
+Anrich nortje scores 0 run(s) in the 4.4 over(s). Dc has a total score of 38/1.
+INFO:root:**Commentator**:
+Anrich nortje is at the crease, facing Moeen ali from Csk.
+Anrich nortje scores 0 run(s) in the 4.5 over(s). Dc has a total score of 38/1.
+INFO:root:**Commentator**:
+Anrich nortje is at the crease, facing Moeen ali from Csk.
+Anrich nortje scores 1 run(s) in the 4.6 over(s). Dc has a total score of 39/1.
+INFO:root:**Commentator**:
+We have a change in bowling as Moeen ali's spell comes to an end.
+Sam curran takes over the bowling duties for Csk.
+The current score is 39 in the 5.0 over(s).
+INFO:root:**Commentator**:
+Anrich nortje is at the crease, facing Ravindra jadeja from Csk.
+Anrich nortje scores 1 run(s) in the 5.1 over(s). Dc has a total score of 40/1.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Ravindra jadeja from Csk.
+Prithvi shaw scores 0 run(s) in the 5.2 over(s). Dc has a total score of 40/1.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Ravindra jadeja from Csk.
+Prithvi shaw scores 1 run(s) in the 5.3 over(s). Dc has a total score of 41/1.
+INFO:root:**Commentator**:
+Anrich nortje is at the crease, facing Ravindra jadeja from Csk.
+Anrich nortje scores 0 run(s) in the 5.4 over(s). Dc has a total score of 41/1.
+INFO:root:**Commentator**:
+Anrich nortje is at the crease, facing Ravindra jadeja from Csk.
+That's a fantastic shot! Anrich nortje smashes it for a FOUR!
+Anrich nortje scores 4 run(s) in the 5.5 over(s). Dc has a total score of 45/1.
+INFO:root:**Commentator**:
+Anrich nortje is at the crease, facing Ravindra jadeja from Csk.
+Anrich nortje scores 3 run(s) in the 5.6 over(s). Dc has a total score of 48/1.
+INFO:root:**Commentator**:
+The current over is being bowled by Ravindra jadeja for Csk.
+It's a change of ends for Ravindra jadeja as they continue their spell.
+The current score is 48 in the 6.0 over(s).
+INFO:root:**Commentator**:
+Anrich nortje is at the crease, facing Ravindra jadeja from Csk.
+Anrich nortje scores 0 run(s) in the 6.1 over(s). Dc has a total score of 48/1.
+INFO:root:**Commentator**:
+Anrich nortje is at the crease, facing Ravindra jadeja from Csk.
+Anrich nortje scores 1 run(s) in the 6.2 over(s). Dc has a total score of 49/1.
+INFO:root:**Commentator**:
+Ravindra jadeja bowls a wide delivery to Prithvi shaw of Dc.
+Wide ball! The umpire signals an extra run for Dc. Score: 50/1.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Ravindra jadeja from Csk.
+That's a fantastic shot! Prithvi shaw smashes it for a FOUR!
+Prithvi shaw scores 4 run(s) in the 6.4 over(s). Dc has a total score of 54/1.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Ravindra jadeja from Csk.
+Prithvi shaw scores 0 run(s) in the 6.5 over(s). Dc has a total score of 54/1.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Ravindra jadeja from Csk.
+Prithvi shaw scores 0 run(s) in the 6.6 over(s). Dc has a total score of 54/1.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Ravindra jadeja from Csk.
+Prithvi shaw scores 1 run(s) in the 6.7 over(s). Dc has a total score of 55/1.
+INFO:root:**Commentator**:
+The current over is being bowled by Ravindra jadeja for Csk.
+It's a change of ends for Ravindra jadeja as they continue their spell.
+The current score is 55 in the 7.0 over(s).
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Ravindra jadeja from Csk.
+That's a fantastic shot! Prithvi shaw smashes it for a FOUR!
+Prithvi shaw scores 4 run(s) in the 7.1 over(s). Dc has a total score of 59/1.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Ravindra jadeja from Csk.
+Prithvi shaw scores 1 run(s) in the 7.2 over(s). Dc has a total score of 60/1.
+INFO:root:**Commentator**:
+Anrich nortje is at the crease, facing Ravindra jadeja from the Csk.
+Oh, what a catch! Anrich nortje is caught by Ms dhoni.
+Dc scores 0 run(s) in the 7.3 over(s). Total score: 60/2.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Dc. Shreyas iyer strides to the crease.
+Ravindra jadeja is ready to bowl the over for Csk.
+The current score is 60/2 in the 7.3 over(s).
+INFO:root:**Commentator**:
+Shreyas iyer is at the crease, facing Ravindra jadeja from Csk.
+Shreyas iyer scores 1 run(s) in the 7.4 over(s). Dc has a total score of 61/2.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Ravindra jadeja from Csk.
+Prithvi shaw scores 0 run(s) in the 7.5 over(s). Dc has a total score of 61/2.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Ravindra jadeja from Csk.
+Prithvi shaw scores 0 run(s) in the 7.6 over(s). Dc has a total score of 61/2.
+INFO:root:**Commentator**:
+The current over is being bowled by Ravindra jadeja for Csk.
+It's a change of ends for Ravindra jadeja as they continue their spell.
+The current score is 61 in the 8.0 over(s).
+INFO:root:**Commentator**:
+Shreyas iyer is at the crease, facing Ravindra jadeja from Csk.
+Shreyas iyer scores 0 run(s) in the 8.1 over(s). Dc has a total score of 61/2.
+INFO:root:**Commentator**:
+Shreyas iyer is at the crease, facing Ravindra jadeja from Csk.
+Shreyas iyer scores 0 run(s) in the 8.2 over(s). Dc has a total score of 61/2.
+INFO:root:**Commentator**:
+Shreyas iyer is at the crease, facing Ravindra jadeja from the Csk.
+Oh, what a catch! Shreyas iyer is caught by Faf du plessis.
+Dc scores 0 run(s) in the 8.3 over(s). Total score: 61/3.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Dc. Lalit yadav strides to the crease.
+Ravindra jadeja is ready to bowl the over for Csk.
+The current score is 61/3 in the 8.3 over(s).
+INFO:root:**Commentator**:
+Lalit yadav is at the crease, facing Ravindra jadeja from Csk.
+Lalit yadav scores 0 run(s) in the 8.4 over(s). Dc has a total score of 61/3.
+INFO:root:**Commentator**:
+Lalit yadav is at the crease, facing Ravindra jadeja from Csk.
+Lalit yadav scores 1 run(s) in the 8.5 over(s). Dc has a total score of 62/3.
+INFO:root:**Commentator**:
+Prithvi shaw is at the crease, facing Ravindra jadeja from the Csk.
+Oh, what a catch! Prithvi shaw is caught by Ms dhoni.
+Dc scores 0 run(s) in the 8.6 over(s). Total score: 62/4.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Dc. Kagiso rabada strides to the crease.
+Ravindra jadeja is ready to bowl the over for Csk.
+The current score is 62/4 in the 8.6 over(s).
+INFO:root:**Commentator**:
+The current over is being bowled by Ravindra jadeja for Csk.
+It's a change of ends for Ravindra jadeja as they continue their spell.
+The current score is 62 in the 9.0 over(s).
+INFO:root:**Commentator**:
+Lalit yadav is at the crease, facing Suresh raina from Csk.
+Lalit yadav scores 2 run(s) in the 9.1 over(s). Dc has a total score of 64/4.
+INFO:root:**Commentator**:
+Lalit yadav is at the crease, facing Suresh raina from Csk.
+Lalit yadav scores 1 run(s) in the 9.2 over(s). Dc has a total score of 65/4.
+INFO:root:**Commentator**:
+Kagiso rabada is at the crease, facing Suresh raina from Csk.
+Kagiso rabada scores 0 run(s) in the 9.3 over(s). Dc has a total score of 65/4.
+INFO:root:**Commentator**:
+Kagiso rabada is at the crease, facing Suresh raina from Csk.
+Kagiso rabada scores 1 run(s) in the 9.4 over(s). Dc has a total score of 66/4.
+INFO:root:**Commentator**:
+Lalit yadav is at the crease, facing Suresh raina from Csk.
+That's a fantastic shot! Lalit yadav smashes it for a FOUR!
+Lalit yadav scores 4 run(s) in the 9.5 over(s). Dc has a total score of 70/4.
+INFO:root:**Commentator**:
+Suresh raina bowls a wide delivery to Lalit yadav of Dc.
+Wide ball! The umpire signals an extra run for Dc. Score: 71/4.
+INFO:root:**Commentator**:
+Lalit yadav is at the crease, facing Suresh raina from Csk.
+Lalit yadav scores 1 run(s) in the 9.7 over(s). Dc has a total score of 72/4.
+INFO:root:**Commentator**:
+We have a change in bowling as Ravindra jadeja's spell comes to an end.
+Suresh raina takes over the bowling duties for Csk.
+The current score is 72 in the 10.0 over(s).
+INFO:root:**Commentator**:
+Lalit yadav is at the crease, facing Suresh raina from Csk.
+It's a maximum! Lalit yadav launches the ball into the stands for a SIX!
+Lalit yadav scores 6 run(s) in the 10.1 over(s). Dc has a total score of 78/4.
+INFO:root:**Commentator**:
+Lalit yadav is at the crease, facing Suresh raina from Csk.
+Lalit yadav scores 0 run(s) in the 10.2 over(s). Dc has a total score of 78/4.
+INFO:root:**Commentator**:
+Lalit yadav is at the crease, facing Suresh raina from Csk.
+Lalit yadav scores 1 run(s) in the 10.3 over(s). Dc has a total score of 79/4.
+INFO:root:**Commentator**:
+Kagiso rabada is at the crease, facing Suresh raina from Csk.
+Kagiso rabada scores 1 run(s) in the 10.4 over(s). Dc has a total score of 80/4.
+INFO:root:**Commentator**:
+Lalit yadav is at the crease, facing Suresh raina from the Csk.
+Oh, what a catch! Lalit yadav is caught by Faf du plessis.
+Dc scores 0 run(s) in the 10.5 over(s). Total score: 80/5.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Dc. Rishabh pant strides to the crease.
+Suresh raina is ready to bowl the over for Csk.
+The current score is 80/5 in the 10.5 over(s).
+INFO:root:**Commentator**:
+Rishabh pant is at the crease, facing Suresh raina from Csk.
+Rishabh pant scores 0 run(s) in the 10.6 over(s). Dc has a total score of 80/5.
+INFO:root:**Commentator**:
+The current over is being bowled by Suresh raina for Csk.
+It's a change of ends for Suresh raina as they continue their spell.
+The current score is 80 in the 11.0 over(s).
+INFO:root:**Commentator**:
+Kagiso rabada is at the crease, facing Suresh raina from Csk.
+Kagiso rabada scores 1 run(s) in the 11.1 over(s). Dc has a total score of 81/5.
+INFO:root:**Commentator**:
+Suresh raina bowls a wide delivery to Rishabh pant of Dc.
+Wide ball! The umpire signals an extra run for Dc. Score: 82/5.
+INFO:root:**Commentator**:
+Rishabh pant is at the crease, facing Suresh raina from Csk.
+Rishabh pant scores 1 run(s) in the 11.3 over(s). Dc has a total score of 83/5.
+INFO:root:**Commentator**:
+Kagiso rabada is at the crease, facing Suresh raina from Csk.
+Kagiso rabada scores 1 run(s) in the 11.4 over(s). Dc has a total score of 84/5.
+INFO:root:**Commentator**:
+Rishabh pant is at the crease, facing Suresh raina from Csk.
+Rishabh pant scores 1 run(s) in the 11.5 over(s). Dc has a total score of 85/5.
+INFO:root:**Commentator**:
+Kagiso rabada is at the crease, facing Suresh raina from the Csk.
+Oh, what a catch! Kagiso rabada is caught by Ambati rayudu.
+Dc scores 0 run(s) in the 11.6 over(s). Total score: 85/6.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Dc. Ravichandran ashwin strides to the crease.
+Suresh raina is ready to bowl the over for Csk.
+The current score is 85/6 in the 11.6 over(s).
+INFO:root:**Commentator**:
+Ravichandran ashwin is at the crease, facing Suresh raina from Csk.
+Ravichandran ashwin scores 1 run(s) in the 11.7 over(s). Dc has a total score of 86/6.
+INFO:root:**Commentator**:
+The current over is being bowled by Suresh raina for Csk.
+It's a change of ends for Suresh raina as they continue their spell.
+The current score is 86 in the 12.0 over(s).
+INFO:root:**Commentator**:
+Ravichandran ashwin is at the crease, facing Suresh raina from Csk.
+Ravichandran ashwin scores 1 run(s) in the 12.1 over(s). Dc has a total score of 87/6.
+INFO:root:**Commentator**:
+Rishabh pant is at the crease, facing Suresh raina from Csk.
+That's a fantastic shot! Rishabh pant smashes it for a FOUR!
+Rishabh pant scores 4 run(s) in the 12.2 over(s). Dc has a total score of 91/6.
+INFO:root:**Commentator**:
+Rishabh pant is at the crease, facing Suresh raina from Csk.
+Rishabh pant scores 0 run(s) in the 12.3 over(s). Dc has a total score of 91/6.
+INFO:root:**Commentator**:
+Rishabh pant is at the crease, facing Suresh raina from the Csk.
+Oh, what a catch! Rishabh pant is caught by Shardul thakur.
+Dc scores 0 run(s) in the 12.4 over(s). Total score: 91/7.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Dc. Shimron hetmyer strides to the crease.
+Suresh raina is ready to bowl the over for Csk.
+The current score is 91/7 in the 12.4 over(s).
+INFO:root:**Commentator**:
+Shimron hetmyer is at the crease, facing Suresh raina from Csk.
+Shimron hetmyer scores 1 run(s) in the 12.5 over(s). Dc has a total score of 92/7.
+INFO:root:**Commentator**:
+Ravichandran ashwin is at the crease, facing Suresh raina from Csk.
+Ravichandran ashwin scores 1 run(s) in the 12.6 over(s). Dc has a total score of 93/7.
+INFO:root:**Commentator**:
+The current over is being bowled by Suresh raina for Csk.
+It's a change of ends for Suresh raina as they continue their spell.
+The current score is 93 in the 13.0 over(s).
+INFO:root:**Commentator**:
+Ravichandran ashwin is at the crease, facing Sam curran from Csk.
+Ravichandran ashwin scores 0 run(s) in the 13.1 over(s). Dc has a total score of 93/7.
+INFO:root:**Commentator**:
+Ravichandran ashwin is at the crease, facing Sam curran from Csk.
+Ravichandran ashwin scores 0 run(s) in the 13.2 over(s). Dc has a total score of 93/7.
+INFO:root:**Commentator**:
+Ravichandran ashwin is at the crease, facing Sam curran from Csk.
+Ravichandran ashwin scores 1 run(s) in the 13.3 over(s). Dc has a total score of 94/7.
+INFO:root:**Commentator**:
+Shimron hetmyer is at the crease, facing Sam curran from Csk.
+Shimron hetmyer scores 1 run(s) in the 13.4 over(s). Dc has a total score of 95/7.
+INFO:root:**Commentator**:
+Ravichandran ashwin is at the crease, facing Sam curran from the Csk.
+Oh, what a catch! Ravichandran ashwin is caught by Ruturaj gaikwad.
+Dc scores 0 run(s) in the 13.5 over(s). Total score: 95/8.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Dc. Axar patel strides to the crease.
+Sam curran is ready to bowl the over for Csk.
+The current score is 95/8 in the 13.5 over(s).
+INFO:root:**Commentator**:
+Axar patel is at the crease, facing Sam curran from Csk.
+Axar patel scores 0 run(s) in the 13.6 over(s). Dc has a total score of 95/8.
+INFO:root:**Commentator**:
+We have a change in bowling as Suresh raina's spell comes to an end.
+Sam curran takes over the bowling duties for Csk.
+The current score is 95 in the 14.0 over(s).
+INFO:root:**Commentator**:
+Shimron hetmyer is at the crease, facing Moeen ali from Csk.
+Shimron hetmyer scores 0 run(s) in the 14.1 over(s). Dc has a total score of 95/8.
+INFO:root:**Commentator**:
+Shimron hetmyer is at the crease, facing Moeen ali from Csk.
+Shimron hetmyer scores 0 run(s) in the 14.2 over(s). Dc has a total score of 95/8.
+INFO:root:**Commentator**:
+Shimron hetmyer is at the crease, facing Moeen ali from Csk.
+Shimron hetmyer scores 0 run(s) in the 14.3 over(s). Dc has a total score of 95/8.
+INFO:root:**Commentator**:
+Shimron hetmyer is at the crease, facing Moeen ali from Csk.
+That's a fantastic shot! Shimron hetmyer smashes it for a FOUR!
+Shimron hetmyer scores 4 run(s) in the 14.4 over(s). Dc has a total score of 99/8.
+INFO:root:**Commentator**:
+Shimron hetmyer is at the crease, facing Moeen ali from Csk.
+Shimron hetmyer scores 1 run(s) in the 14.5 over(s). Dc has a total score of 100/8.
+INFO:root:**Commentator**:
+Axar patel is at the crease, facing Moeen ali from Csk.
+Axar patel scores 0 run(s) in the 14.6 over(s). Dc has a total score of 100/8.
+INFO:root:**Commentator**:
+We have a change in bowling as Sam curran's spell comes to an end.
+Moeen ali takes over the bowling duties for Csk.
+The current score is 100 in the 15.0 over(s).
+INFO:root:**Commentator**:
+Shimron hetmyer is at the crease, facing Sam curran from Csk.
+Shimron hetmyer scores 1 run(s) in the 15.1 over(s). Dc has a total score of 101/8.
+INFO:root:**Commentator**:
+Axar patel is at the crease, facing Sam curran from Csk.
+Axar patel scores 1 run(s) in the 15.2 over(s). Dc has a total score of 102/8.
+INFO:root:**Commentator**:
+Sam curran bowls a wide delivery to Shimron hetmyer of Dc.
+Wide ball! The umpire signals an extra run for Dc. Score: 103/8.
+INFO:root:**Commentator**:
+Shimron hetmyer is at the crease, facing Sam curran from Csk.
+Shimron hetmyer scores 0 run(s) in the 15.4 over(s). Dc has a total score of 103/8.
+INFO:root:**Commentator**:
+Shimron hetmyer is at the crease, facing Sam curran from the Csk.
+Oh, what a catch! Shimron hetmyer is caught by Faf du plessis.
+Dc scores 0 run(s) in the 15.5 over(s). Total score: 103/9.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Dc. Avesh khan strides to the crease.
+Sam curran is ready to bowl the over for Csk.
+The current score is 103/9 in the 15.5 over(s).
+INFO:root:**Commentator**:
+Avesh khan is at the crease, facing Sam curran from Csk.
+Avesh khan scores 0 run(s) in the 15.6 over(s). Dc has a total score of 103/9.
+INFO:root:**Commentator**:
+Avesh khan is at the crease, facing Sam curran from Csk.
+Avesh khan scores 0 run(s) in the 15.7 over(s). Dc has a total score of 103/9.
+INFO:root:**Commentator**:
+We have a change in bowling as Moeen ali's spell comes to an end.
+Sam curran takes over the bowling duties for Csk.
+The current score is 103 in the 16.0 over(s).
+INFO:root:**Commentator**:
+Axar patel is at the crease, facing Shardul thakur from Csk.
+Axar patel scores 2 run(s) in the 16.1 over(s). Dc has a total score of 105/9.
+INFO:root:**Commentator**:
+Axar patel is at the crease, facing Shardul thakur from the Csk.
+Axar patel Bowled! The Csk strikes.
+Dc scores 0 run(s) in the 16.2 over(s). Total score: 105/10.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Dc. Axar patel strides to the crease.
+Shardul thakur is ready to bowl the over for Csk.
+The current score is 105/10 in the 16.2 over(s).
+INFO:root:**Commentator**:
+We have a great innings between Csk and Dc.
+The opening batsmen, Ruturaj gaikwad and Faf du plessis, are at the crease.
+Kagiso rabada is ready to bowl the first over for Dc.
+Csk is chasing a target of 106 runs.
+INFO:root:**Commentator**:
+Kagiso rabada bowls a wide delivery to Ruturaj gaikwad of Csk.
+Wide ball! The umpire signals an extra run for Csk. Score: 1/0.
+INFO:root:**Commentator**:
+Ruturaj gaikwad is at the crease, facing Kagiso rabada from Dc.
+Ruturaj gaikwad scores 0 run(s) in the 0.2 over(s). Csk has a total score of 1/0.
+INFO:root:**Commentator**:
+Ruturaj gaikwad is at the crease, facing Kagiso rabada from Dc.
+Ruturaj gaikwad scores 1 run(s) in the 0.3 over(s). Csk has a total score of 2/0.
+INFO:root:**Commentator**:
+Faf du plessis is at the crease, facing Kagiso rabada from the Dc.
+Faf du plessis Bowled! The Dc strikes.
+Csk scores 0 run(s) in the 0.4 over(s). Total score: 2/1.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Csk. Deepak chahar strides to the crease.
+Kagiso rabada is ready to bowl the over for Dc.
+The current score is 2/1 in the 0.4 over(s).
+INFO:root:**Commentator**:
+Deepak chahar is at the crease, facing Kagiso rabada from Dc.
+Deepak chahar scores 1 run(s) in the 0.5 over(s). Csk has a total score of 3/1.
+INFO:root:**Commentator**:
+Ruturaj gaikwad is at the crease, facing Kagiso rabada from Dc.
+Ruturaj gaikwad scores 0 run(s) in the 0.6 over(s). Csk has a total score of 3/1.
+INFO:root:**Commentator**:
+Ruturaj gaikwad is at the crease, facing Kagiso rabada from Dc.
+That's a fantastic shot! Ruturaj gaikwad smashes it for a FOUR!
+Ruturaj gaikwad scores 4 run(s) in the 0.7 over(s). Csk has a total score of 7/1.
+INFO:root:**Commentator**:
+We have a great innings between Csk and Dc.
+The opening batsmen, Ruturaj gaikwad and Deepak chahar, are at the crease.
+Kagiso rabada is ready to bowl the first over for Dc.
+Csk is chasing a target of 106 runs.
+INFO:root:**Commentator**:
+We have a great innings between Csk and Dc.
+The opening batsmen, Ruturaj gaikwad and Deepak chahar, are at the crease.
+Kagiso rabada is ready to bowl the first over for Dc.
+Csk is chasing a target of 106 runs.
+INFO:root:**Commentator**:
+The current over is being bowled by Kagiso rabada for Dc.
+It's a change of ends for Kagiso rabada as they continue their spell.
+The current score is 7 in the 1.0 over(s).
+INFO:root:**Commentator**:
+Deepak chahar is at the crease, facing Ravichandran ashwin from Dc.
+Deepak chahar scores 1 run(s) in the 1.1 over(s). Csk has a total score of 8/1.
+INFO:root:**Commentator**:
+Ruturaj gaikwad is at the crease, facing Ravichandran ashwin from Dc.
+Ruturaj gaikwad scores 1 run(s) in the 1.2 over(s). Csk has a total score of 9/1.
+INFO:root:**Commentator**:
+Deepak chahar is at the crease, facing Ravichandran ashwin from Dc.
+Deepak chahar scores 1 run(s) in the 1.3 over(s). Csk has a total score of 10/1.
+INFO:root:**Commentator**:
+Ruturaj gaikwad is at the crease, facing Ravichandran ashwin from the Dc.
+Oh, what a catch! Ruturaj gaikwad is caught by Prithvi shaw.
+Csk scores 0 run(s) in the 1.4 over(s). Total score: 10/2.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Csk. Suresh raina strides to the crease.
+Ravichandran ashwin is ready to bowl the over for Dc.
+The current score is 10/2 in the 1.4 over(s).
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Ravichandran ashwin from Dc.
+Suresh raina scores 0 run(s) in the 1.5 over(s). Csk has a total score of 10/2.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Ravichandran ashwin from Dc.
+Suresh raina scores 1 run(s) in the 1.6 over(s). Csk has a total score of 11/2.
+INFO:root:**Commentator**:
+The current over is being bowled by Ravichandran ashwin for Dc.
+It's a change of ends for Ravichandran ashwin as they continue their spell.
+The current score is 11 in the 2.0 over(s).
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Ravichandran ashwin from Dc.
+Suresh raina scores 1 run(s) in the 2.1 over(s). Csk has a total score of 12/2.
+INFO:root:**Commentator**:
+Ravichandran ashwin bowls a wide delivery to Deepak chahar of Csk.
+Wide ball! The umpire signals an extra run for Csk. Score: 13/2.
+INFO:root:**Commentator**:
+Deepak chahar is at the crease, facing Ravichandran ashwin from Dc.
+Deepak chahar scores 2 run(s) in the 2.3 over(s). Csk has a total score of 15/2.
+INFO:root:**Commentator**:
+Deepak chahar is at the crease, facing Ravichandran ashwin from Dc.
+Deepak chahar scores 0 run(s) in the 2.4 over(s). Csk has a total score of 15/2.
+INFO:root:**Commentator**:
+Deepak chahar is at the crease, facing Ravichandran ashwin from Dc.
+Deepak chahar scores 1 run(s) in the 2.5 over(s). Csk has a total score of 16/2.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Ravichandran ashwin from Dc.
+Suresh raina scores 0 run(s) in the 2.6 over(s). Csk has a total score of 16/2.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Ravichandran ashwin from Dc.
+Suresh raina scores 1 run(s) in the 2.7 over(s). Csk has a total score of 17/2.
+INFO:root:**Commentator**:
+The current over is being bowled by Ravichandran ashwin for Dc.
+It's a change of ends for Ravichandran ashwin as they continue their spell.
+The current score is 17 in the 3.0 over(s).
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Avesh khan from Dc.
+Suresh raina scores 2 run(s) in the 3.1 over(s). Csk has a total score of 19/2.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Avesh khan from Dc.
+Suresh raina scores 0 run(s) in the 3.2 over(s). Csk has a total score of 19/2.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Avesh khan from Dc.
+Suresh raina scores 1 run(s) in the 3.3 over(s). Csk has a total score of 20/2.
+INFO:root:**Commentator**:
+Deepak chahar is at the crease, facing Avesh khan from Dc.
+Deepak chahar scores 1 run(s) in the 3.4 over(s). Csk has a total score of 21/2.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Avesh khan from Dc.
+Suresh raina scores 1 run(s) in the 3.5 over(s). Csk has a total score of 22/2.
+INFO:root:**Commentator**:
+Deepak chahar is at the crease, facing Avesh khan from Dc.
+Deepak chahar scores 1 run(s) in the 3.6 over(s). Csk has a total score of 23/2.
+INFO:root:**Commentator**:
+The current over is being bowled by Avesh khan for Dc.
+It's a change of ends for Avesh khan as they continue their spell.
+The current score is 23 in the 4.0 over(s).
+INFO:root:**Commentator**:
+Deepak chahar is at the crease, facing Avesh khan from the Dc.
+Oh, what a catch! Deepak chahar is caught by Lalit yadav.
+Csk scores 0 run(s) in the 4.1 over(s). Total score: 23/3.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Csk. Shardul thakur strides to the crease.
+Avesh khan is ready to bowl the over for Dc.
+The current score is 23/3 in the 4.1 over(s).
+INFO:root:**Commentator**:
+Shardul thakur is at the crease, facing Avesh khan from Dc.
+That's a fantastic shot! Shardul thakur smashes it for a FOUR!
+Shardul thakur scores 4 run(s) in the 4.2 over(s). Csk has a total score of 27/3.
+INFO:root:**Commentator**:
+Shardul thakur is at the crease, facing Avesh khan from Dc.
+Shardul thakur scores 0 run(s) in the 4.3 over(s). Csk has a total score of 27/3.
+INFO:root:**Commentator**:
+Shardul thakur is at the crease, facing Avesh khan from Dc.
+Shardul thakur scores 2 run(s) in the 4.4 over(s). Csk has a total score of 29/3.
+INFO:root:**Commentator**:
+Shardul thakur is at the crease, facing Avesh khan from the Dc.
+Oh, what a catch! Shardul thakur is caught by Kagiso rabada.
+Csk scores 0 run(s) in the 4.5 over(s). Total score: 29/4.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Csk. Ambati rayudu strides to the crease.
+Avesh khan is ready to bowl the over for Dc.
+The current score is 29/4 in the 4.5 over(s).
+INFO:root:**Commentator**:
+Ambati rayudu is at the crease, facing Avesh khan from Dc.
+Ambati rayudu scores 1 run(s) in the 4.6 over(s). Csk has a total score of 30/4.
+INFO:root:**Commentator**:
+The current over is being bowled by Avesh khan for Dc.
+It's a change of ends for Avesh khan as they continue their spell.
+The current score is 30 in the 5.0 over(s).
+INFO:root:**Commentator**:
+Ambati rayudu is at the crease, facing Axar patel from Dc.
+Ambati rayudu scores 1 run(s) in the 5.1 over(s). Csk has a total score of 31/4.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Axar patel from Dc.
+Suresh raina scores 0 run(s) in the 5.2 over(s). Csk has a total score of 31/4.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Axar patel from Dc.
+Suresh raina scores 0 run(s) in the 5.3 over(s). Csk has a total score of 31/4.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Axar patel from Dc.
+Suresh raina scores 1 run(s) in the 5.4 over(s). Csk has a total score of 32/4.
+INFO:root:**Commentator**:
+Ambati rayudu is at the crease, facing Axar patel from Dc.
+Ambati rayudu scores 0 run(s) in the 5.5 over(s). Csk has a total score of 32/4.
+INFO:root:**Commentator**:
+Ambati rayudu is at the crease, facing Axar patel from Dc.
+Ambati rayudu scores 1 run(s) in the 5.6 over(s). Csk has a total score of 33/4.
+INFO:root:**Commentator**:
+The current over is being bowled by Axar patel for Dc.
+It's a change of ends for Axar patel as they continue their spell.
+The current score is 33 in the 6.0 over(s).
+INFO:root:**Commentator**:
+Ambati rayudu is at the crease, facing Axar patel from Dc.
+Ambati rayudu scores 1 run(s) in the 6.1 over(s). Csk has a total score of 34/4.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Axar patel from Dc.
+Suresh raina scores 0 run(s) in the 6.2 over(s). Csk has a total score of 34/4.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Axar patel from Dc.
+Suresh raina scores 0 run(s) in the 6.3 over(s). Csk has a total score of 34/4.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Axar patel from Dc.
+Suresh raina scores 1 run(s) in the 6.4 over(s). Csk has a total score of 35/4.
+INFO:root:**Commentator**:
+Ambati rayudu is at the crease, facing Axar patel from Dc.
+Ambati rayudu scores 1 run(s) in the 6.5 over(s). Csk has a total score of 36/4.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Axar patel from Dc.
+Suresh raina scores 0 run(s) in the 6.6 over(s). Csk has a total score of 36/4.
+INFO:root:**Commentator**:
+The current over is being bowled by Axar patel for Dc.
+It's a change of ends for Axar patel as they continue their spell.
+The current score is 36 in the 7.0 over(s).
+INFO:root:**Commentator**:
+Ambati rayudu is at the crease, facing Axar patel from Dc.
+Ambati rayudu scores 0 run(s) in the 7.1 over(s). Csk has a total score of 36/4.
+INFO:root:**Commentator**:
+Ambati rayudu is at the crease, facing Axar patel from the Dc.
+Oh, what a catch! Ambati rayudu is caught by Rishabh pant.
+Csk scores 0 run(s) in the 7.2 over(s). Total score: 36/5.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Csk. Dwayne bravo strides to the crease.
+Axar patel is ready to bowl the over for Dc.
+The current score is 36/5 in the 7.2 over(s).
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Axar patel from Dc.
+Dwayne bravo scores 0 run(s) in the 7.3 over(s). Csk has a total score of 36/5.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Axar patel from Dc.
+Dwayne bravo scores 1 run(s) in the 7.4 over(s). Csk has a total score of 37/5.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Axar patel from Dc.
+Suresh raina scores 1 run(s) in the 7.5 over(s). Csk has a total score of 38/5.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Axar patel from Dc.
+It's a maximum! Dwayne bravo launches the ball into the stands for a SIX!
+Dwayne bravo scores 6 run(s) in the 7.6 over(s). Csk has a total score of 44/5.
+INFO:root:**Commentator**:
+The current over is being bowled by Axar patel for Dc.
+It's a change of ends for Axar patel as they continue their spell.
+The current score is 44 in the 8.0 over(s).
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Lalit yadav from Dc.
+Suresh raina scores 1 run(s) in the 8.1 over(s). Csk has a total score of 45/5.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Lalit yadav from Dc.
+Dwayne bravo scores 1 run(s) in the 8.2 over(s). Csk has a total score of 46/5.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Lalit yadav from Dc.
+Suresh raina scores 0 run(s) in the 8.3 over(s). Csk has a total score of 46/5.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Lalit yadav from Dc.
+Suresh raina scores 1 run(s) in the 8.4 over(s). Csk has a total score of 47/5.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Lalit yadav from Dc.
+Dwayne bravo scores 0 run(s) in the 8.5 over(s). Csk has a total score of 47/5.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Lalit yadav from Dc.
+Dwayne bravo scores 0 run(s) in the 8.6 over(s). Csk has a total score of 47/5.
+INFO:root:**Commentator**:
+We have a change in bowling as Axar patel's spell comes to an end.
+Lalit yadav takes over the bowling duties for Dc.
+The current score is 47 in the 9.0 over(s).
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Lalit yadav from Dc.
+Suresh raina scores 1 run(s) in the 9.1 over(s). Csk has a total score of 48/5.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Lalit yadav from Dc.
+Dwayne bravo scores 1 run(s) in the 9.2 over(s). Csk has a total score of 49/5.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Lalit yadav from Dc.
+Suresh raina scores 1 run(s) in the 9.3 over(s). Csk has a total score of 50/5.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Lalit yadav from Dc.
+Dwayne bravo scores 1 run(s) in the 9.4 over(s). Csk has a total score of 51/5.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Lalit yadav from Dc.
+Suresh raina scores 1 run(s) in the 9.5 over(s). Csk has a total score of 52/5.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Lalit yadav from Dc.
+Dwayne bravo scores 1 run(s) in the 9.6 over(s). Csk has a total score of 53/5.
+INFO:root:**Commentator**:
+The current over is being bowled by Lalit yadav for Dc.
+It's a change of ends for Lalit yadav as they continue their spell.
+The current score is 53 in the 10.0 over(s).
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Lalit yadav from Dc.
+Dwayne bravo scores 2 run(s) in the 10.1 over(s). Csk has a total score of 55/5.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Lalit yadav from Dc.
+Dwayne bravo scores 1 run(s) in the 10.2 over(s). Csk has a total score of 56/5.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Lalit yadav from Dc.
+Suresh raina scores 0 run(s) in the 10.3 over(s). Csk has a total score of 56/5.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Lalit yadav from Dc.
+Suresh raina scores 0 run(s) in the 10.4 over(s). Csk has a total score of 56/5.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Lalit yadav from Dc.
+Suresh raina scores 0 run(s) in the 10.5 over(s). Csk has a total score of 56/5.
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Lalit yadav from Dc.
+Suresh raina scores 1 run(s) in the 10.6 over(s). Csk has a total score of 57/5.
+INFO:root:**Commentator**:
+The current over is being bowled by Lalit yadav for Dc.
+It's a change of ends for Lalit yadav as they continue their spell.
+The current score is 57 in the 11.0 over(s).
+INFO:root:**Commentator**:
+Suresh raina is at the crease, facing Lalit yadav from the Dc.
+Suresh raina Lbw! The Dc strikes.
+Csk scores 0 run(s) in the 11.1 over(s). Total score: 57/6.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Csk. Sam curran strides to the crease.
+Lalit yadav is ready to bowl the over for Dc.
+The current score is 57/6 in the 11.1 over(s).
+INFO:root:**Commentator**:
+Sam curran is at the crease, facing Lalit yadav from Dc.
+Sam curran scores 1 run(s) in the 11.2 over(s). Csk has a total score of 58/6.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Lalit yadav from Dc.
+Dwayne bravo scores 2 run(s) in the 11.3 over(s). Csk has a total score of 60/6.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Lalit yadav from Dc.
+Dwayne bravo scores 1 run(s) in the 11.4 over(s). Csk has a total score of 61/6.
+INFO:root:**Commentator**:
+Sam curran is at the crease, facing Lalit yadav from Dc.
+Sam curran scores 0 run(s) in the 11.5 over(s). Csk has a total score of 61/6.
+INFO:root:**Commentator**:
+Sam curran is at the crease, facing Lalit yadav from Dc.
+Sam curran scores 1 run(s) in the 11.6 over(s). Csk has a total score of 62/6.
+INFO:root:**Commentator**:
+The current over is being bowled by Lalit yadav for Dc.
+It's a change of ends for Lalit yadav as they continue their spell.
+The current score is 62 in the 12.0 over(s).
+INFO:root:**Commentator**:
+Sam curran is at the crease, facing Prithvi shaw from Dc.
+Sam curran scores 1 run(s) in the 12.1 over(s). Csk has a total score of 63/6.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Prithvi shaw from Dc.
+Dwayne bravo scores 2 run(s) in the 12.2 over(s). Csk has a total score of 65/6.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Prithvi shaw from Dc.
+Dwayne bravo scores 1 run(s) in the 12.3 over(s). Csk has a total score of 66/6.
+INFO:root:**Commentator**:
+Sam curran is at the crease, facing Prithvi shaw from Dc.
+Sam curran scores 2 run(s) in the 12.4 over(s). Csk has a total score of 68/6.
+INFO:root:**Commentator**:
+Sam curran is at the crease, facing Prithvi shaw from Dc.
+Sam curran scores 1 run(s) in the 12.5 over(s). Csk has a total score of 69/6.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Prithvi shaw from Dc.
+Dwayne bravo scores 0 run(s) in the 12.6 over(s). Csk has a total score of 69/6.
+INFO:root:**Commentator**:
+We have a change in bowling as Lalit yadav's spell comes to an end.
+Prithvi shaw takes over the bowling duties for Dc.
+The current score is 69 in the 13.0 over(s).
+INFO:root:**Commentator**:
+Sam curran is at the crease, facing Prithvi shaw from Dc.
+Sam curran scores 0 run(s) in the 13.1 over(s). Csk has a total score of 69/6.
+INFO:root:**Commentator**:
+Sam curran is at the crease, facing Prithvi shaw from Dc.
+Sam curran scores 0 run(s) in the 13.2 over(s). Csk has a total score of 69/6.
+INFO:root:**Commentator**:
+Sam curran is at the crease, facing Prithvi shaw from Dc.
+Sam curran scores 0 run(s) in the 13.3 over(s). Csk has a total score of 69/6.
+INFO:root:**Commentator**:
+Sam curran is at the crease, facing Prithvi shaw from Dc.
+Sam curran scores 0 run(s) in the 13.4 over(s). Csk has a total score of 69/6.
+INFO:root:**Commentator**:
+Sam curran is at the crease, facing Prithvi shaw from Dc.
+Sam curran scores 2 run(s) in the 13.5 over(s). Csk has a total score of 71/6.
+INFO:root:**Commentator**:
+Sam curran is at the crease, facing Prithvi shaw from Dc.
+Sam curran scores 1 run(s) in the 13.6 over(s). Csk has a total score of 72/6.
+INFO:root:**Commentator**:
+The current over is being bowled by Prithvi shaw for Dc.
+It's a change of ends for Prithvi shaw as they continue their spell.
+The current score is 72 in the 14.0 over(s).
+INFO:root:**Commentator**:
+Sam curran is at the crease, facing Prithvi shaw from Dc.
+Sam curran scores 2 run(s) in the 14.1 over(s). Csk has a total score of 74/6.
+INFO:root:**Commentator**:
+Sam curran is at the crease, facing Prithvi shaw from Dc.
+Sam curran scores 0 run(s) in the 14.2 over(s). Csk has a total score of 74/6.
+INFO:root:**Commentator**:
+Sam curran is at the crease, facing Prithvi shaw from Dc.
+Sam curran scores 0 run(s) in the 14.3 over(s). Csk has a total score of 74/6.
+INFO:root:**Commentator**:
+Sam curran is at the crease, facing Prithvi shaw from Dc.
+Sam curran scores 2 run(s) in the 14.4 over(s). Csk has a total score of 76/6.
+INFO:root:**Commentator**:
+Sam curran is at the crease, facing Prithvi shaw from the Dc.
+Sam curran Run out! The Dc strikes.
+Csk scores 0 run(s) in the 14.5 over(s). Total score: 76/7.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Csk. Ravindra jadeja strides to the crease.
+Prithvi shaw is ready to bowl the over for Dc.
+The current score is 76/7 in the 14.5 over(s).
+INFO:root:**Commentator**:
+Ravindra jadeja is at the crease, facing Prithvi shaw from Dc.
+Ravindra jadeja scores 0 run(s) in the 14.6 over(s). Csk has a total score of 76/7.
+INFO:root:**Commentator**:
+The current over is being bowled by Prithvi shaw for Dc.
+It's a change of ends for Prithvi shaw as they continue their spell.
+The current score is 76 in the 15.0 over(s).
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Anrich nortje from Dc.
+Dwayne bravo scores 0 run(s) in the 15.1 over(s). Csk has a total score of 76/7.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Anrich nortje from Dc.
+Dwayne bravo scores 3 run(s) in the 15.2 over(s). Csk has a total score of 79/7.
+INFO:root:**Commentator**:
+Ravindra jadeja is at the crease, facing Anrich nortje from Dc.
+Ravindra jadeja scores 0 run(s) in the 15.3 over(s). Csk has a total score of 79/7.
+INFO:root:**Commentator**:
+Ravindra jadeja is at the crease, facing Anrich nortje from Dc.
+Ravindra jadeja scores 0 run(s) in the 15.4 over(s). Csk has a total score of 79/7.
+INFO:root:**Commentator**:
+Ravindra jadeja is at the crease, facing Anrich nortje from Dc.
+Ravindra jadeja scores 0 run(s) in the 15.5 over(s). Csk has a total score of 79/7.
+INFO:root:**Commentator**:
+Ravindra jadeja is at the crease, facing Anrich nortje from Dc.
+Ravindra jadeja scores 0 run(s) in the 15.6 over(s). Csk has a total score of 79/7.
+INFO:root:**Commentator**:
+We have a change in bowling as Prithvi shaw's spell comes to an end.
+Anrich nortje takes over the bowling duties for Dc.
+The current score is 79 in the 16.0 over(s).
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Anrich nortje from Dc.
+Dwayne bravo scores 0 run(s) in the 16.1 over(s). Csk has a total score of 79/7.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Anrich nortje from Dc.
+Dwayne bravo scores 2 run(s) in the 16.2 over(s). Csk has a total score of 81/7.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Anrich nortje from Dc.
+Dwayne bravo scores 2 run(s) in the 16.3 over(s). Csk has a total score of 83/7.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Anrich nortje from Dc.
+Dwayne bravo scores 0 run(s) in the 16.4 over(s). Csk has a total score of 83/7.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Anrich nortje from Dc.
+Dwayne bravo scores 0 run(s) in the 16.5 over(s). Csk has a total score of 83/7.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Anrich nortje from Dc.
+Dwayne bravo scores 1 run(s) in the 16.6 over(s). Csk has a total score of 84/7.
+INFO:root:**Commentator**:
+The current over is being bowled by Anrich nortje for Dc.
+It's a change of ends for Anrich nortje as they continue their spell.
+The current score is 84 in the 17.0 over(s).
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Anrich nortje from Dc.
+Dwayne bravo scores 0 run(s) in the 17.1 over(s). Csk has a total score of 84/7.
+INFO:root:**Commentator**:
+Dwayne bravo is at the crease, facing Anrich nortje from the Dc.
+Dwayne bravo Bowled! The Dc strikes.
+Csk scores 0 run(s) in the 17.2 over(s). Total score: 84/8.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Csk. Moeen ali strides to the crease.
+Anrich nortje is ready to bowl the over for Dc.
+The current score is 84/8 in the 17.2 over(s).
+INFO:root:**Commentator**:
+Moeen ali is at the crease, facing Anrich nortje from Dc.
+That's a fantastic shot! Moeen ali smashes it for a FOUR!
+Moeen ali scores 4 run(s) in the 17.3 over(s). Csk has a total score of 88/8.
+INFO:root:**Commentator**:
+Moeen ali is at the crease, facing Anrich nortje from Dc.
+Moeen ali scores 1 run(s) in the 17.4 over(s). Csk has a total score of 89/8.
+INFO:root:**Commentator**:
+Ravindra jadeja is at the crease, facing Anrich nortje from Dc.
+It's a maximum! Ravindra jadeja launches the ball into the stands for a SIX!
+Ravindra jadeja scores 6 run(s) in the 17.5 over(s). Csk has a total score of 95/8.
+INFO:root:**Commentator**:
+Ravindra jadeja is at the crease, facing Anrich nortje from Dc.
+Ravindra jadeja scores 2 run(s) in the 17.6 over(s). Csk has a total score of 97/8.
+INFO:root:**Commentator**:
+The current over is being bowled by Anrich nortje for Dc.
+It's a change of ends for Anrich nortje as they continue their spell.
+The current score is 97 in the 18.0 over(s).
+INFO:root:**Commentator**:
+Moeen ali is at the crease, facing Anrich nortje from Dc.
+Moeen ali scores 0 run(s) in the 18.1 over(s). Csk has a total score of 97/8.
+INFO:root:**Commentator**:
+Moeen ali is at the crease, facing Anrich nortje from Dc.
+Moeen ali scores 1 run(s) in the 18.2 over(s). Csk has a total score of 98/8.
+INFO:root:**Commentator**:
+Ravindra jadeja is at the crease, facing Anrich nortje from Dc.
+Ravindra jadeja scores 0 run(s) in the 18.3 over(s). Csk has a total score of 98/8.
+INFO:root:**Commentator**:
+Ravindra jadeja is at the crease, facing Anrich nortje from Dc.
+Ravindra jadeja scores 0 run(s) in the 18.4 over(s). Csk has a total score of 98/8.
+INFO:root:**Commentator**:
+Ravindra jadeja is at the crease, facing Anrich nortje from Dc.
+Ravindra jadeja scores 1 run(s) in the 18.5 over(s). Csk has a total score of 99/8.
+INFO:root:**Commentator**:
+Moeen ali is at the crease, facing Anrich nortje from Dc.
+It's a maximum! Moeen ali launches the ball into the stands for a SIX!
+Moeen ali scores 6 run(s) in the 18.6 over(s). Csk has a total score of 105/8.
+INFO:root:**Commentator**:
+The current over is being bowled by Anrich nortje for Dc.
+It's a change of ends for Anrich nortje as they continue their spell.
+The current score is 105 in the 19.0 over(s).
+INFO:root:**Commentator**:
+Ravindra jadeja is at the crease, facing Kagiso rabada from Dc.
+Ravindra jadeja scores 1 run(s) in the 19.1 over(s). Csk has a total score of 106/8.
+INFO:root:**Commentator**:
+Moeen ali is at the crease, facing Kagiso rabada from Dc.
+Moeen ali scores 1 run(s) in the 19.2 over(s). Csk has a total score of 107/8.
+INFO:root:**Commentator**:
+Ravindra jadeja is at the crease, facing Kagiso rabada from Dc.
+Ravindra jadeja scores 0 run(s) in the 19.3 over(s). Csk has a total score of 107/8.
+INFO:root:**Commentator**:
+Ravindra jadeja is at the crease, facing Kagiso rabada from the Dc.
+Oh, what a catch! Ravindra jadeja is caught by Lalit yadav.
+Csk scores 0 run(s) in the 19.4 over(s). Total score: 107/9.
+INFO:root:**Commentator**:
+We have a new batsman coming in for Csk. Ms dhoni strides to the crease.
+Kagiso rabada is ready to bowl the over for Dc.
+The current score is 107/9 in the 19.4 over(s).
+INFO:root:**Commentator**:
+Ms dhoni is at the crease, facing Kagiso rabada from Dc.
+Ms dhoni scores 1 run(s) in the 19.5 over(s). Csk has a total score of 108/9.
+INFO:root:**Commentator**:
+Moeen ali is at the crease, facing Kagiso rabada from Dc.
+Moeen ali scores 0 run(s) in the 19.6 over(s). Csk has a total score of 108/9.
+INFO:root:**Commentator**:
+Csk successfully chases down the target set by Dc.
+Csk emerges victorious! Csk Won By 1 wickets in the 20.0 over(s).
+Final score: 108/9.
