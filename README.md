@@ -27,22 +27,32 @@
 - [📂 Project Structure](#project-structure)
 - [🧩 Modules](#modules)
 - [🚀 Getting Started](#-getting-started)
-- [🗺 Roadmap](#-roadmap)
 - [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-- [👏 Acknowledgments](#-acknowledgments)
 
 ---
 
 
 ## 📍 Overview
-
-
+The Cricket Match Simulation project is a comprehensive and flexible script that simulates a cricket match. It allows developers and cricket enthusiasts to simulate and analyze cricket matches using realistic game mechanics. The project combines multiple classes, modules, and utility functions to create an immersive cricket match simulation experience. With customizable match parameters and extensibility, users can tailor the simulation to their specific requirements and explore various aspects of the game.
 
 ---
 
 ## ⚙️ Features
+> <b>Team Management</b>: The project includes classes to represent cricket teams, allowing users to create and manage teams participating in the match. It provides methods to add players, set lineups, and track team statistics.
 
+> Player Performance Tracking: Each player participating in the match is tracked using the Tracker class. It keeps a record of runs scored, balls faced, wickets taken, and other performance metrics, enabling detailed analysis of player performance.
+
+> Realistic Match Simulation: The simulation takes into account various match factors, such as balls bowled, wickets fallen, and target scores, to adjust player stats dynamically. This creates a realistic gameplay experience where player performance evolves based on the match situation.
+
+> Umpire Decision Making: The Umpire class acts as the umpire in the simulation, making decisions on players' dismissals. It considers rules and probabilities to determine whether a player is out or not.
+
+> Match Outcome Analysis: The MatchSummary class provides a summary of the match statistics, including batting and bowling performance for all players. It generates tables to display runs scored, balls faced, wickets taken, economy rates, and other relevant match data.
+
+> Customizability and Extensibility: The project offers flexibility for customization and extension. Users can modify match parameters, add new features, or integrate the simulation into larger projects, tailoring it to their specific needs.
+
+> User-Friendly Interface: The project includes well-organized classes, utility functions, and modules, making it easy to understand, modify, and build upon. It provides clear and concise code, allowing developers to explore and enhance the simulation effortlessly.
+
+The Cricket Match Simulation project provides a valuable resource for developers, cricket enthusiasts, and anyone interested in understanding the dynamics of cricket matches. It serves as a foundation for creating cricket match simulations and offers a platform for analyzing player and team performance.
 
 
 ---
@@ -75,7 +85,25 @@ repo
 ---
 
 ## 🧩 Modules
+The Cricket Match Simulation project consists of several modules that provide specific functionalities and enhance the simulation experience. These modules encapsulate related classes, functions, and utility code, enabling modularity and easy integration into other projects. Here are the key modules included in the project:
 
+> Players: This module defines the Player class, which represents a cricket player participating in the match. It includes attributes and methods to track player statistics, such as runs scored, balls faced, wickets taken, and bowling economy rates. The module also provides functions to manage player data and perform calculations related to player performance.
+
+> Tracking: The Tracking module contains the Tracker class, responsible for tracking player performance during the match. It records player-specific data, including runs scored, balls faced, wickets taken, and other relevant metrics. The module offers functions to update and retrieve player performance data, enabling real-time tracking and analysis.
+
+> Setting: The Setting module comprises the Setting class, which handles adjustments to player statistics based on the match situation. It includes methods to adjust the stats of batsmen and bowlers, considering factors like balls bowled, wickets fallen, target scores, and pitch conditions. The module allows the simulation to simulate realistic gameplay and dynamic player performance.
+
+> Umpire: The Umpire module introduces the Umpire class, which acts as the umpire in the simulation. It implements the decision-making process for player dismissals, taking into account rules and probabilities. The module enables the simulation to replicate umpire decisions accurately, enhancing the authenticity of the match experience.
+
+> MatchSummary: This module provides the MatchSummary class, which generates match summaries and statistics. It includes methods to create tables displaying batting and bowling performance for all players, such as runs scored, balls faced, wickets taken, and economy rates. The module offers valuable insights into player and team performance, facilitating match outcome analysis.
+
+> Teams: The Teams module consists of the Team class, representing a cricket team participating in the match. It includes attributes and methods to manage team-specific information, such as team name, players, and team statistics. The module allows for easy team creation, management, and interaction within the simulation.
+
+> Match: The Match module introduces the Match class, which orchestrates the cricket match simulation. It brings together the players, teams, umpire, and other components to simulate a complete cricket match. The module provides methods to initialize the match, simulate innings, track scores, and determine match outcomes.
+
+> Field: The Field module defines the Field class, representing the cricket field where the match takes place. It includes attributes and methods to manage field-related information, such as pitch conditions, weather, and fielding positions. The module enhances the realism of the simulation by incorporating field dynamics into player and match performance.
+
+These modules work together to create a comprehensive cricket match simulation environment. They provide the necessary components to simulate matches, track player performance, analyze match outcomes, and customize the simulation experience. By leveraging these modules, users can gain a deeper understanding of cricket dynamics and explore various aspects of the game.
 
 ---
 
@@ -84,9 +112,10 @@ repo
 ### ✔️ Prerequisites
 
 Before you begin, ensure that you have the following prerequisites installed:
-> - `ℹ️ Requirement 1`
-> - `ℹ️ Requirement 2`
-> - `ℹ️ ...`
+> - `ℹ️ Python 3.8.0 >=`
+> - `ℹ️ Tabulate`
+
+Refer the Requriment.txt for more details
 
 ### 📦 Installation
 
@@ -102,30 +131,14 @@ cd IPL_Simulation
 
 3. Install the dependencies:
 ```sh
-`ℹ️  INSERT-DESCRIPTION`
+`ℹ️  pip install -r requirements.txt`
 ```
 
 ### 🎮 Using IPL_Simulation
 
 ```sh
-`ℹ️  INSERT-DESCRIPTION`
+`ℹ️ python main.py'
 ```
-
-### 🧪 Running Tests
-```sh
-`ℹ️  INSERT-DESCRIPTION`
-```
-
----
-
-
-## 🗺 Roadmap
-
-> - [X] `ℹ️  Task 1: Implement X`
-> - [ ] `ℹ️  Task 2: Refactor Y`
-> - [ ] `ℹ️ ...`
-
-
 ---
 
 ## 🤝 Contributing
@@ -148,17 +161,3 @@ git push origin new-feature-branch
 ```
 7. Create a new pull request to the original project repository. In the pull request, describe the changes you've made and why they're necessary.
 The project maintainers will review your changes and provide feedback or merge them into the main branch.
-
----
-
-## 📄 License
-
-This project is licensed under the `ℹ️  INSERT-LICENSE-TYPE` License. See the [LICENSE](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository) file for additional info.
-
----
-
-## 👏 Acknowledgments
-
-> - `ℹ️  List any resources, contributors, inspiration, etc.`
-
----
