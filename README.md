@@ -4,7 +4,6 @@
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" width="100" />
 <br>IPL_Simulation
 </h1>
-<h3>◦ </h3>
 <h3>◦ Developed with the software and tools listed below.</h3>
 
 <p align="center">
@@ -112,8 +111,8 @@ These modules work together to create a comprehensive cricket match simulation e
 ### ✔️ Prerequisites
 
 Before you begin, ensure that you have the following prerequisites installed:
-> - `ℹ️ Python 3.8.0 >=`
-> - `ℹ️ Tabulate`
+> - Python 3.8.0 >=
+> - Tabulate
 
 Refer the Requriment.txt for more details
 
