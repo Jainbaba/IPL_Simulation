@@ -38,7 +38,7 @@ The Cricket Match Simulation project is a comprehensive and flexible script that
 ---
 
 ## ⚙️ Features
-> <b>Team Management</b>: The project includes classes to represent cricket teams, allowing users to create and manage teams participating in the match. It provides methods to add players, set lineups, and track team statistics.
+> Team Management: The project includes classes to represent cricket teams, allowing users to create and manage teams participating in the match. It provides methods to add players, set lineups, and track team statistics.
 
 > Player Performance Tracking: Each player participating in the match is tracked using the Tracker class. It keeps a record of runs scored, balls faced, wickets taken, and other performance metrics, enabling detailed analysis of player performance.
 
@@ -131,13 +131,13 @@ cd IPL_Simulation
 
 3. Install the dependencies:
 ```sh
-`ℹ️  pip install -r requirements.txt`
+pip install -r requirements.txt
 ```
 
 ### 🎮 Using IPL_Simulation
 
 ```sh
-`ℹ️ python main.py'
+python main.py
 ```
 ---
 
